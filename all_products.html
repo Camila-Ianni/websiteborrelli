@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shop All Supplements | ELITE LABS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Montserrat:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "outline": "#75777c",
+                        "on-background": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "secondary": "#755b11",
+                        "secondary-fixed": "#ffdf97",
+                        "surface": "#f9f9f9",
+                        "tertiary-container": "#342714",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#e5c270",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#44474b",
+                        "on-secondary-fixed": "#251a00",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "focus-zest": "#FF8C00",
+                        "primary-fixed": "#d9e3f4",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#f6dfc2",
+                        "inverse-primary": "#bdc7d7",
+                        "secondary-container": "#fdd983",
+                        "surface-tint": "#555f6d",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary": "#1e1303",
+                        "surface-dim": "#dadada",
+                        "on-secondary-container": "#785d13",
+                        "primary-container": "#202a36",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#3e4855",
+                        "energy-lime": "#D4FF00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#bdc7d7",
+                        "on-primary-fixed": "#121c28",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#c5c6cc",
+                        "primary": "#0b1621",
+                        "on-secondary-fixed-variant": "#5a4400",
+                        "on-primary-container": "#8791a0",
+                        "on-secondary": "#ffffff",
+                        "pure-black": "#1A1A1A",
+                        "on-tertiary-container": "#a18d74",
+                        "tertiary-fixed-dim": "#d9c3a7",
+                        "recovery-berry": "#FF2E63",
+                        "pure-white": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#54442f",
+                        "on-tertiary-fixed": "#251908",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "display-xl-mobile": ["Montserrat"],
+                        "display-xl": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "display-xl": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .product-card-hover:hover .add-to-cart-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-card-hover:hover img {
+            transform: scale(1.05) translateY(-10px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #202a36;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-energy-lime selection:text-primary">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-md border-b border-outline-variant docked full-width top-0 sticky z-50 shadow-sm h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<a class="font-display-xl-mobile text-headline-md tracking-tighter text-primary" href="#">ELITE LABS</a>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-energy-lime transition-all duration-300" href="#">Creatine</a>
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1" href="#">Protein</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-energy-lime transition-all duration-300" href="#">Amino Acids</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-energy-lime transition-all duration-300" href="#">Calculator</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-energy-lime transition-all duration-300" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border-none rounded-full px-4 py-2 text-label-sm w-64 focus:ring-2 focus:ring-energy-lime transition-all" placeholder="Search..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant" data-icon="search">search</span>
+</div>
+<button class="bg-primary text-pure-white px-6 py-2 rounded-full font-label-bold hover:bg-energy-lime hover:text-primary transition-all duration-300 active:scale-95">Contact</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-12">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="font-display-xl text-display-xl uppercase leading-none mb-4">Laboratory <span class="text-primary/10 stroke-primary stroke-2">Grade</span> Precision</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl font-body-lg">Engineered for high-performance athletes. Transparent formulas, clinical dosages, and raw energy to fuel your evolution.</p>
+</header>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-32 space-y-8">
+<div>
+<h3 class="font-label-bold text-label-bold uppercase tracking-widest mb-4">Category</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 border-2 border-outline-variant rounded text-primary focus:ring-energy-lime" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">All Products</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 border-2 border-outline-variant rounded text-primary focus:ring-energy-lime" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Whey Protein</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 border-2 border-outline-variant rounded text-primary focus:ring-energy-lime" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Isolate Protein</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 border-2 border-outline-variant rounded text-primary focus:ring-energy-lime" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Vegan Protein</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-label-bold text-label-bold uppercase tracking-widest mb-4">Your Goal</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1 bg-primary text-pure-white rounded-full text-label-sm font-label-bold">Muscle Growth</button>
+<button class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-label-sm font-label-bold hover:bg-recovery-berry hover:text-pure-white transition-colors">Recovery</button>
+<button class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-label-sm font-label-bold hover:bg-energy-lime hover:text-primary transition-colors">Energy</button>
+</div>
+</div>
+<div>
+<h3 class="font-label-bold text-label-bold uppercase tracking-widest mb-4">Price Range</h3>
+<input class="w-full accent-primary h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between mt-2 text-label-sm text-on-surface-variant">
+<span>$20</span>
+<span>$150</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid (Bento Style) -->
+<section class="flex-grow">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="product-card-hover group relative bg-pure-white p-6 rounded-xl shadow-[0_32px_32px_-8px_rgba(32,42,54,0.04)] hover:shadow-[0_32px_32px_-4px_rgba(32,42,54,0.12)] transition-all duration-500 overflow-hidden">
+<div class="absolute top-4 right-4 z-10">
+<span class="bg-energy-lime text-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter">Bestseller</span>
+</div>
+<div class="relative h-64 mb-6 flex items-center justify-center">
+<img alt="Straw Berry Protein" class="h-full object-contain transition-transform duration-500 z-0" data-alt="A premium, large white supplement tub with high-contrast label featuring vibrant strawberries and splashing milk. The lighting is studio-perfect with sharp highlights and soft shadows against a minimalist light gray background. The product looks professional, laboratory-grade, and energetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_XX9HLzSysEwOk3G7vUhDJQMUgD52rR0gSd3RpZfLk9j-QpdSnxuU5WO3izbw00cZ5ROC5UxrHxEeSWK8cpTes6N93ePpUL2pw22xk0SlNEK-bWXdCp1ii-mfWeYahS3kHXu4VGjZBjS3-Dwp22L564qR4tpqZhP9j5dDQw7kJHrA4-GJD2Cg7TehfuKOMAwSzWkMgVMA0FIdvPPfCOCs75lmVw4fXSGbSyyii0Bq6Dk41ZYC7YFtEGbrXo7hMaNuL4Ipfe4HUQ"/>
+<div class="add-to-cart-overlay absolute inset-0 bg-primary/90 opacity-0 transform translate-y-4 transition-all duration-300 flex flex-col items-center justify-center gap-4 rounded-lg px-6 text-center">
+<p class="text-pure-white font-label-bold text-label-bold">High Bioavailability Whey Isolate</p>
+<button class="w-full py-3 bg-energy-lime text-primary font-black uppercase tracking-widest text-label-bold rounded hover:bg-pure-white transition-colors">Add to Cart</button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary leading-tight uppercase">ISO-SHARK BERRY</h4>
+<p class="text-label-sm text-on-surface-variant">25g Protein | 0g Sugar</p>
+</div>
+<span class="font-headline-md text-headline-md text-primary">$54.99</span>
+</div>
+<div class="flex gap-1 pt-2">
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-on-surface-variant ml-2">(124)</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card-hover group relative bg-pure-white p-6 rounded-xl shadow-[0_32px_32px_-8px_rgba(32,42,54,0.04)] hover:shadow-[0_32px_32px_-4px_rgba(32,42,54,0.12)] transition-all duration-500 overflow-hidden">
+<div class="relative h-64 mb-6 flex items-center justify-center">
+<img alt="Vanilla Cream Protein" class="h-full object-contain transition-transform duration-500 z-0" data-alt="A sleek supplement canister with a clean vanilla-themed label. Beside it, a stylized splash of creamy vanilla milk creates a sense of motion and freshness. The overall aesthetic is high-performance and modern, using a light mode color palette of whites and soft creams with deep navy accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANy0X3MXujzHKV4OWoEHt1wEobNiRIrpQRVemoicCHtj2GqJ7IWB0zysen8ERDKk8WtRbX_t0mt1f-9gnbuEwRIWhl4utcCBhNrA0t7ro80jp8x-RqN0B776wKaDFp2bsjhz06O1k7Oy86DLxWI2_Io7PrEbYn38cfS_xCG4KxzotNRpAV4_bnWsgprPUNi_3ma2INEgKHG1C4wnNAGBvW9a66rNzRz5kEuP7i6WXiLPQ6mogUr88A0LWs5PRaS5HCcWj93w5ubg"/>
+<div class="add-to-cart-overlay absolute inset-0 bg-primary/90 opacity-0 transform translate-y-4 transition-all duration-300 flex flex-col items-center justify-center gap-4 rounded-lg px-6 text-center">
+<p class="text-pure-white font-label-bold text-label-bold">Ultra-Smooth Texture &amp; Pure Flavour</p>
+<button class="w-full py-3 bg-recovery-berry text-pure-white font-black uppercase tracking-widest text-label-bold rounded hover:bg-pure-white hover:text-primary transition-colors">Quick Buy</button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary leading-tight uppercase">ISO-SHARK VANILLA</h4>
+<p class="text-label-sm text-on-surface-variant">25g Protein | Low Carb</p>
+</div>
+<span class="font-headline-md text-headline-md text-primary">$49.99</span>
+</div>
+<div class="flex gap-1 pt-2">
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-focus-zest text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-sm">star</span>
+<span class="text-label-sm text-on-surface-variant ml-2">(89)</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 (Featured/Large) -->
+<div class="product-card-hover group relative bg-surface-container-low p-6 rounded-xl shadow-[0_32px_32px_-8px_rgba(32,42,54,0.04)] hover:shadow-[0_32px_32px_-4px_rgba(32,42,54,0.12)] transition-all duration-500 overflow-hidden lg:row-span-2">
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<span class="bg-primary text-pure-white px-3 py-1 rounded text-[10px] font-black uppercase w-fit">New Formula</span>
+<span class="bg-recovery-berry text-pure-white px-3 py-1 rounded text-[10px] font-black uppercase w-fit">Energy+</span>
+</div>
+<div class="relative h-80 mb-6 flex items-center justify-center">
+<img alt="Pre-Workout Elite" class="h-full object-cover rounded-lg mix-blend-multiply opacity-80" data-alt="A dramatic close-up of a high-energy pre-workout supplement bottle. The label is bold with aggressive typography. In the background, a blurred athlete is seen in mid-training, conveying a sense of explosive energy and high-velocity motion. Sharp studio lighting creates intense highlights on the metallic bottle cap." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBgZP6FHzpZ6BLoGr6vAp4aLzYXZHNAYcOYw5YNVJ2PVbYXhA73v05eufcwUkU79pDhAq4JikhuehXvvoUo7HEs6re_gc7sgjO423T9i23wijJGeEq9N6XjVfrFfXUGRVEjCZXDs8bsq3a5ewljm0mQ9SjI9ysKN6Apd0yjOP5C2sMpz9wuLlh49wsbZUgPdbZR5E-t_hC7ZVIKQRq4lC1wSdG-iNRM9MAvrLMPykY26cuG4Yc9StvbAD2fEuZBdAbrrWfqJutHQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+<h4 class="text-energy-lime font-display-xl-mobile text-headline-lg-mobile uppercase italic tracking-tighter leading-none mb-2">Nitrosurge X</h4>
+<p class="text-pure-white text-body-md font-bold mb-4">Max Strength Pre-Workout</p>
+<button class="w-full py-4 bg-pure-white text-primary font-black uppercase tracking-widest text-label-bold rounded-lg hover:bg-energy-lime transition-all active:scale-95 shadow-xl">Order Now - $39.99</button>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-label-sm text-on-surface-variant font-body-md">Clinical dosages of L-Citrulline, Beta-Alanine, and Caffeine Anhydrous for unmatched focus and vascularity.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-pure-white p-3 rounded text-center shadow-sm">
+<span class="block font-black text-headline-md text-primary">6G</span>
+<span class="text-[10px] uppercase text-outline">Citrulline</span>
+</div>
+<div class="bg-pure-white p-3 rounded text-center shadow-sm">
+<span class="block font-black text-headline-md text-primary">3.2G</span>
+<span class="text-[10px] uppercase text-outline">Beta-Alanine</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card-hover group relative bg-pure-white p-6 rounded-xl shadow-[0_32px_32px_-8px_rgba(32,42,54,0.04)] hover:shadow-[0_32px_32px_-4px_rgba(32,42,54,0.12)] transition-all duration-500 overflow-hidden">
+<div class="relative h-64 mb-6 flex items-center justify-center">
+<img alt="BCAA Recovery" class="h-full object-contain transition-transform duration-500 z-0" data-alt="A sleek black container of BCAA powder. Vibrant lime green accents on the label pop against the dark matte finish. The image is set in a high-key, modern gym setting with soft bokeh. The lighting is crisp and clean, emphasizing the product's performance-oriented design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIrEodjrBLxsLyt5sSCgmDj4CJoYjV7U3Hyjj8OEgttAk-VuI1T0i31M19w6p_sKk0G-7R6APgdWcc6TIEPtEKxNlPs9zOQ-fihcRdW3Ks1qPiwGTCVxJCqvNIWGQxWZN5eb2kEp9WyJlVFpYoYx0zucdFElGhycxspmFXCGL0zE1xzko3wXhpuf_4hSHhh5ssctElLZJzresa8PnAfrAY3LI_WzHr382xw4_Z360ijf1I2dEsxgzgO7iT8EnvsqE6zzBnNR2yBQ"/>
+<div class="add-to-cart-overlay absolute inset-0 bg-primary/90 opacity-0 transform translate-y-4 transition-all duration-300 flex flex-col items-center justify-center gap-4 rounded-lg px-6 text-center">
+<p class="text-pure-white font-label-bold text-label-bold">Intra-Workout Amino Formula</p>
+<button class="w-full py-3 bg-energy-lime text-primary font-black uppercase tracking-widest text-label-bold rounded hover:bg-pure-white transition-colors">Add to Cart</button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary leading-tight uppercase">RECOVER 2:1:1</h4>
+<p class="text-label-sm text-on-surface-variant">7g BCAAs | Zero Calorie</p>
+</div>
+<span class="font-headline-md text-headline-md text-primary">$34.99</span>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="product-card-hover group relative bg-pure-white p-6 rounded-xl shadow-[0_32px_32px_-8px_rgba(32,42,54,0.04)] hover:shadow-[0_32px_32px_-4px_rgba(32,42,54,0.12)] transition-all duration-500 overflow-hidden">
+<div class="relative h-64 mb-6 flex items-center justify-center">
+<img alt="Creatine Monohydrate" class="h-full object-contain transition-transform duration-500 z-0" data-alt="A minimalist white tub of pure creatine monohydrate. The label uses clean, bold black typography with a single horizontal energy-lime line for emphasis. The product is shot from a low angle to give it an authoritative, massive feel in a clean laboratory environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTsOr6xgAk1dZBhZ7zWsVuMyMzgz_XIWhpsIRlDRyi6la2wuGBsdSk4JEJoyubwIfpxlSXsrwSu7KiGHZyDUNeihCZVpUHkiJYhub-ajRXOghYZTrEm-pddvPWPPCeRjMWAgV6j7nuJYd8PFj1cFDZI5nlVsN4vnd1ZyIkh_05DSEbPYdLNGW7QdIuR_32JsW9MH3RQJ1ncw-60xN9b_-RAfQ0u9sCnh3Bs_9qzUzT4Mo3aBBPt1-O2yav916-R3LG65ZxZNZnrg"/>
+<div class="add-to-cart-overlay absolute inset-0 bg-primary/90 opacity-0 transform translate-y-4 transition-all duration-300 flex flex-col items-center justify-center gap-4 rounded-lg px-6 text-center">
+<p class="text-pure-white font-label-bold text-label-bold">100% Pure Micronized Creatine</p>
+<button class="w-full py-3 bg-energy-lime text-primary font-black uppercase tracking-widest text-label-bold rounded hover:bg-pure-white transition-colors">Add to Cart</button>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary leading-tight uppercase">ELITE CREATINE</h4>
+<p class="text-label-sm text-on-surface-variant">5g Pure Monohydrate</p>
+</div>
+<span class="font-headline-md text-headline-md text-primary">$29.99</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-pure-black full-width mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto text-pure-white">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md font-black text-pure-white">ELITE LABS</div>
+<p class="text-body-md text-on-primary-container leading-relaxed">Pioneering the next generation of athletic performance through science-backed supplementation and transparent engineering.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-energy-lime hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center hover:bg-recovery-berry hover:text-pure-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined">forum</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-energy-lime uppercase mb-6">Shop</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Protein</a></li>
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Pre-Workout</a></li>
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Amino Acids</a></li>
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Creatine</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-energy-lime uppercase mb-6">Support</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Shipping Info</a></li>
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Returns</a></li>
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary-container hover:text-pure-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-bold text-label-bold text-energy-lime uppercase">Newsletter</h4>
+<p class="text-label-sm text-on-primary-container">Join the elite for exclusive drops and training insights.</p>
+<div class="flex gap-2">
+<input class="bg-primary-container border-none rounded px-4 py-2 text-label-sm w-full focus:ring-1 focus:ring-energy-lime" placeholder="email@elite.com" type="email"/>
+<button class="bg-energy-lime text-primary px-4 py-2 font-label-bold rounded hover:bg-pure-white transition-colors">JOIN</button>
+</div>
+</div>
+</div>
+<div class="border-t border-primary-container max-w-container-max mx-auto px-margin-desktop py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">© 2024 ELITE LABS SUPPLEMENTS. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<span class="text-on-primary-container text-label-sm uppercase">Instagram</span>
+<span class="text-on-primary-container text-label-sm uppercase">WhatsApp</span>
+</div>
+</div>
+</footer>
+<!-- Mobile Nav Bar (Hidden on Desktop) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-lg border-t border-outline-variant z-50 px-margin-mobile py-4 flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold uppercase">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold uppercase">Shop</span>
+</button>
+<button class="relative bg-primary text-pure-white w-12 h-12 rounded-full flex items-center justify-center -mt-8 shadow-xl">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-energy-lime text-primary text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center">2</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-bold uppercase">Favs</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase">Profile</span>
+</button>
+</div>
+<script>
+        // Micro-interactions and subtle scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Add to cart simple animation
+        document.querySelectorAll('.add-to-cart-overlay button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const originalText = this.innerText;
+                this.innerText = 'ADDED';
+                this.classList.add('bg-recovery-berry');
+                setTimeout(() => {
+                    this.innerText = originalText;
+                    this.classList.remove('bg-recovery-berry');
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

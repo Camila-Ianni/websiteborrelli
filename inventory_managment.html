@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fdd983",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed-dim": "#d9c3a7",
+                        "secondary-fixed-dim": "#e5c270",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#251a00",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#121c28",
+                        "on-secondary-container": "#785d13",
+                        "on-secondary": "#ffffff",
+                        "recovery-berry": "#FF2E63",
+                        "energy-lime": "#D4FF00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#54442f",
+                        "secondary-fixed": "#ffdf97",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "focus-zest": "#FF8C00",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#bdc7d7",
+                        "pure-white": "#FFFFFF",
+                        "outline": "#75777c",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed": "#d9e3f4",
+                        "on-tertiary-fixed": "#251908",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "outline-variant": "#c5c6cc",
+                        "on-surface-variant": "#44474b",
+                        "on-secondary-fixed-variant": "#5a4400",
+                        "on-primary-container": "#8791a0",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#555f6d",
+                        "primary-container": "#202a36",
+                        "secondary": "#755b11",
+                        "tertiary-fixed": "#f6dfc2",
+                        "pure-black": "#1A1A1A",
+                        "primary": "#0b1621",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed-variant": "#3e4855",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#a18d74",
+                        "inverse-primary": "#bdc7d7",
+                        "tertiary-container": "#342714",
+                        "tertiary": "#1e1303",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Montserrat"],
+                        "label-bold": ["Inter"],
+                        "display-xl-mobile": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-xl": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #202a36;
+        }
+        .diagonal-cut {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary shadow-[32px_0_32px_rgba(32,42,54,0.06)] flex flex-col py-8 z-50">
+<div class="px-6 mb-12">
+<h1 class="font-display-xl text-display-xl tracking-tighter text-pure-white leading-none">ELITE LABS</h1>
+<p class="font-label-bold text-label-bold text-energy-lime mt-2 tracking-widest">Admin Terminal</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<!-- Dashboard -->
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Dashboard</span>
+</a>
+<!-- Inventory (ACTIVE) -->
+<a class="flex items-center gap-4 px-6 py-4 bg-primary-container text-energy-lime border-r-4 border-energy-lime active:scale-95 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-bold text-label-bold">Inventory</span>
+</a>
+<!-- Orders -->
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<!-- Customers -->
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-bold text-label-bold">Customers</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto flex flex-col gap-6">
+<button class="w-full py-3 bg-energy-lime text-primary font-label-bold text-label-bold rounded-lg hover:brightness-110 transition-all">
+                View Storefront
+            </button>
+<a class="flex items-center gap-4 py-4 text-surface-variant hover:text-recovery-berry transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-bold text-label-bold">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="flex justify-between items-center ml-64 px-margin-desktop w-[calc(100%-16rem)] h-20 top-0 sticky z-40 bg-surface border-b border-surface-variant">
+<div class="flex items-center gap-8 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-energy-lime rounded-lg">
+<span class="absolute inset-y-0 left-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-xl" data-icon="search">search</span>
+</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg focus:ring-0 font-body-md text-on-surface" placeholder="Search product SKU or name..." type="text"/>
+</div>
+<nav class="flex gap-6">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-focus-zest transition-all" href="#">Global Reports</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-focus-zest transition-all" href="#">System Status</a>
+</nav>
+</div>
+<div class="flex items-center gap-6 pl-8">
+<button class="relative text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-recovery-berry rounded-full border-2 border-surface"></span>
+</button>
+<div class="flex items-center gap-3">
+<div class="text-right hidden xl:block">
+<p class="font-label-bold text-label-bold text-primary">Alex Sterling</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Inventory Lead</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-energy-lime">
+<img alt="Admin Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVt_DCIbXE31YlTcfh2VzOdydJlmexEgUVku4t-JFz_EHJnpdXAttfa1i_VcPU08rJHelQ2aIQFGILO5AOcCEjFZ9gHNn9U3uxvjaOyvtdEMQPnAvW74jMsYjXs2DtwGkwDmm5MKPMPKl7Qf87ghINUb6AZbOrNLRz7urHUe7QqERCoF7HqbBZuu5BcggyKOFFRKloQSUFhVEB6_IjSBZJb1L9ktR1_1f6wLanbpTQQTtSWfngNGvzvkgBHZQla4HCo6mkYlYfGQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-margin-desktop min-h-screen">
+<!-- Header Section -->
+<section class="mb-12 flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase">Inventory Management</h2>
+<div class="flex items-center gap-4 mt-2">
+<span class="flex items-center gap-1 font-label-bold text-label-bold text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-energy-lime"></span> 428 Products Total
+                    </span>
+<span class="flex items-center gap-1 font-label-bold text-label-bold text-focus-zest">
+<span class="w-2 h-2 rounded-full bg-focus-zest animate-pulse"></span> 12 Low Stock Alerts
+                    </span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-primary-container text-pure-white font-label-bold text-label-bold flex items-center gap-2 hover:bg-primary transition-all">
+<span class="material-symbols-outlined" data-icon="file_download">file_download</span>
+                    Export CSV
+                </button>
+<button class="px-8 py-3 bg-primary text-pure-white font-label-bold text-label-bold flex items-center gap-2 hover:bg-focus-zest transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    New Product
+                </button>
+</div>
+</section>
+<!-- Bento Stats -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-section-gap">
+<div class="bg-pure-white p-6 rounded-lg shadow-[32px_0_32px_rgba(32,42,54,0.04)] border-l-4 border-primary">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Stock Value</p>
+<h3 class="font-headline-md text-headline-md text-primary">$1,240,500.00</h3>
+</div>
+<div class="bg-pure-white p-6 rounded-lg shadow-[32px_0_32px_rgba(32,42,54,0.04)] border-l-4 border-energy-lime">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Top Performer</p>
+<h3 class="font-headline-md text-headline-md text-primary">ISO Shark (Vanilla)</h3>
+</div>
+<div class="bg-pure-white p-6 rounded-lg shadow-[32px_0_32px_rgba(32,42,54,0.04)] border-l-4 border-focus-zest">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Low Stock Items</p>
+<h3 class="font-headline-md text-headline-md text-focus-zest">12 Skus</h3>
+</div>
+<div class="bg-pure-white p-6 rounded-lg shadow-[32px_0_32px_rgba(32,42,54,0.04)] border-l-4 border-recovery-berry">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Out of Stock</p>
+<h3 class="font-headline-md text-headline-md text-recovery-berry">2 Skus</h3>
+</div>
+</section>
+<!-- Product Table -->
+<section class="bg-pure-white rounded-lg shadow-[32px_0_32px_rgba(32,42,54,0.06)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-primary text-pure-white">
+<tr>
+<th class="px-6 py-5 font-label-bold text-label-bold uppercase tracking-wider">Image</th>
+<th class="px-6 py-5 font-label-bold text-label-bold uppercase tracking-wider">Product Name</th>
+<th class="px-6 py-5 font-label-bold text-label-bold uppercase tracking-wider">SKU</th>
+<th class="px-6 py-5 font-label-bold text-label-bold uppercase tracking-wider">Category</th>
+<th class="px-6 py-5 font-label-bold text-label-bold uppercase tracking-wider text-right">Price</th>
+<th class="px-6 py-5 font-label-bold text-label-bold uppercase tracking-wider text-center">Stock Level</th>
+<th class="px-6 py-5 font-label-bold text-label-bold uppercase tracking-wider text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- Item 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded p-2 overflow-hidden flex items-center justify-center">
+<img class="max-h-full object-contain transform group-hover:scale-110 transition-transform" data-alt="A high-end supplement container of ISO Shark protein powder sitting on a clean, laboratory-grade white surface. The product features energetic lime and deep navy branding, with sharp cinematic lighting highlighting its premium texture. The overall mood is professional, high-performance, and athletic, fitting the Elite Labs corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtyfUzGe_pdKpB6ed_CS7TkiWDWgyn9vlBcFiS9clNpUslpP0irgb-w72Hqhapksq8yUj0bf0N_TDguGFo0oMGgmMrUvs51p9I1c8p04x5nZ8FrfCu0CuucjI3W0zBAKMnbKoalEZe2ivEuDfwzW63ZGxtKlBAb6gwVpQMztxUNBiOpNKkw75ZYxAPyRFqOlGimRMIW9J7bBkM9eOWwM7Mq3Zn3lxMIUFKtOUsgP7gWkI7lfCJNtSruKJTUnq57fdv36F3f3FzZQ"/>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-label-bold text-primary">ISO Shark</p>
+<p class="text-label-sm text-on-surface-variant">Whey Isolate - Vanilla Ice Cream</p>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">EL-IS-001</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Protein</span>
+</td>
+<td class="px-6 py-4 text-right font-label-bold text-primary">$74.99</td>
+<td class="px-6 py-4">
+<div class="flex flex-col items-center gap-1">
+<div class="w-32 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-energy-lime" style="width: 85%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">850 Units</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-3">
+<button class="p-2 text-on-surface-variant hover:text-focus-zest transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-recovery-berry transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Item 2 (LOW STOCK) -->
+<tr class="bg-secondary-container/10 hover:bg-secondary-container/20 transition-colors">
+<td class="px-6 py-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded p-2 overflow-hidden flex items-center justify-center">
+<img class="max-h-full object-contain" data-alt="A jar of Amino Burst energy supplement displayed against a clean, minimalist background. The lighting is crisp and bright, reflecting a high-performance laboratory environment. Vibrant citrus orange and deep black branding accents are visible on the label, creating a high-contrast and energetic visual profile typical of elite sports nutrition brands." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbLifUf3P31--Mznw_C3yAwq857zuuDBk_6lwJ86y88JFUaHivEkiQoGX7uUTByCNmo2ZCqFmgdB_AmBITT0HDpNbSsl7Cwrhpze8R8iOqiW7Lnk_8h9wYhsJ_1be4dZ47mxyaik4cDAinfJ24Ot_3ieqT79JKv6ilJrnVhPvn6yYq2k143x8ozwVhqIHBAUonbrpCgiG2A7acFF9NIL9EcLppvZ3Y5UxK1nagfzEC_ppHhX1ELYhKitVyvzEUQSl1eV8heANYFQ"/>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<p class="font-label-bold text-primary">Amino Burst</p>
+<span class="bg-focus-zest text-pure-white text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter">Low</span>
+</div>
+<p class="text-label-sm text-on-surface-variant">Intra-Workout - Citrus Punch</p>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">EL-AB-042</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Recovery</span>
+</td>
+<td class="px-6 py-4 text-right font-label-bold text-primary">$49.99</td>
+<td class="px-6 py-4">
+<div class="flex flex-col items-center gap-1">
+<div class="w-32 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-focus-zest" style="width: 12%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-focus-zest font-bold">42 Units</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-3">
+<button class="p-2 text-on-surface-variant hover:text-focus-zest transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-recovery-berry transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded p-2 overflow-hidden flex items-center justify-center">
+<img class="max-h-full object-contain" data-alt="A sleek black container of Pre-Ignite workout supplement, featuring aggressive metallic red and silver typography. The product is shot in a high-velocity style with subtle motion blur in the background. The scene is lit with cool blue and stark white lights to create a professional, intense, and modern athletic look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJGIl7Q_iIgoBjsvOgFGI2h7u6ypVdtM8-2J8cMSWJiEN2-bqixnEkRAPwHSBtKc3KY41F-6O3ls_q3pWjm91z9Bq6e2fwC0HKackkInLV-7wYPokMyOk0x7guXiK7-cE5_YHbyd907JDvych5uIipxo78ieh-0_zNa_ePMDA3NmOy3EqU6AmrjD2K44q7duWpouc0U8lUdgyp0VBJLJ437KMMZ2Q7rKDYD36UQiXK41QPdD9YWGoGhcr0CVU151iEjLFMzN1s1w"/>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-label-bold text-primary">Pre-Ignite 2.0</p>
+<p class="text-label-sm text-on-surface-variant">Pre-Workout - Blue Raspberry</p>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">EL-PI-119</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Energy</span>
+</td>
+<td class="px-6 py-4 text-right font-label-bold text-primary">$59.99</td>
+<td class="px-6 py-4">
+<div class="flex flex-col items-center gap-1">
+<div class="w-32 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-energy-lime" style="width: 45%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">210 Units</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-3">
+<button class="p-2 text-on-surface-variant hover:text-focus-zest transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-recovery-berry transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Item 4 (CRITICAL STOCK) -->
+<tr class="bg-error-container/10 hover:bg-error-container/20 transition-colors">
+<td class="px-6 py-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded p-2 overflow-hidden flex items-center justify-center">
+<img class="max-h-full object-contain grayscale opacity-50" data-alt="A product bottle for Night Recovery capsules, styled in deep navy and silver. The bottle sits on a dark glass reflective surface under soft moonlight-simulating lighting. The overall aesthetic is calm, authoritative, and clean, mirroring a laboratory-grade pharmaceutical product designed for dedicated athletes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcxJn0MaIffXoNNffu-5-myh8uRr7s1IIIwPu8l9fdiPqTEVyYKFYEw6w5xCmQS26fRaVkQjJy-_ztzRAyRB0fSV7wpykbXN3j_G6RLxj5oJmmvDXbYvQYF9sEhlAKBnlQ4BeAREDDOa-Q6RlHpIAhNj-kGVYWrEAyRC9JeXOuVryC7rZbMAD-mQAhtnPlq0fj2prnWecGBi7Sj6-z-yqH2-oY1Pe56zDni9LRvSpGwlEWnfSmFynbUQtROWLxOh3zFgFohSJWoA"/>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<p class="font-label-bold text-primary">Night Recovery</p>
+<span class="bg-recovery-berry text-pure-white text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-tighter">OOS</span>
+</div>
+<p class="text-label-sm text-on-surface-variant">ZMA Complex - 90 Capsules</p>
+</td>
+<td class="px-6 py-4 font-body-md text-on-surface-variant">EL-NR-008</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Vitamins</span>
+</td>
+<td class="px-6 py-4 text-right font-label-bold text-primary">$34.99</td>
+<td class="px-6 py-4">
+<div class="flex flex-col items-center gap-1">
+<div class="w-32 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-recovery-berry" style="width: 0%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-recovery-berry font-bold">0 Units</span>
+</div>
+</td>
+<td class="px-6 py-4 text-center">
+<div class="flex justify-center gap-3">
+<button class="p-2 text-on-surface-variant hover:text-focus-zest transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 text-on-surface-variant hover:text-recovery-berry transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-6 bg-surface border-t border-surface-variant flex justify-between items-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Showing 1-10 of 428 products</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded border border-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded bg-primary text-energy-lime font-label-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-surface-variant hover:bg-surface-container-low transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-surface-variant hover:bg-surface-container-low transition-colors">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<script>
+        // Micro-interactions for table rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.querySelector('img')?.classList.add('scale-110');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.querySelector('img')?.classList.remove('scale-110');
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-energy-lime');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-energy-lime');
+        });
+    </script>
+</body></html>

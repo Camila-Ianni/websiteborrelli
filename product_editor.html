@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#fdd983",
+            "on-error-container": "#93000a",
+            "surface-variant": "#e2e2e2",
+            "surface": "#f9f9f9",
+            "tertiary-fixed-dim": "#d9c3a7",
+            "secondary-fixed-dim": "#e5c270",
+            "surface-container": "#eeeeee",
+            "on-secondary-fixed": "#251a00",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#121c28",
+            "on-secondary-container": "#785d13",
+            "on-secondary": "#ffffff",
+            "recovery-berry": "#FF2E63",
+            "energy-lime": "#D4FF00",
+            "surface-container-highest": "#e2e2e2",
+            "on-tertiary-fixed-variant": "#54442f",
+            "secondary-fixed": "#ffdf97",
+            "inverse-surface": "#2f3131",
+            "error-container": "#ffdad6",
+            "background": "#f9f9f9",
+            "focus-zest": "#FF8C00",
+            "surface-container-high": "#e8e8e8",
+            "primary-fixed-dim": "#bdc7d7",
+            "pure-white": "#FFFFFF",
+            "outline": "#75777c",
+            "surface-container-low": "#f3f3f3",
+            "primary-fixed": "#d9e3f4",
+            "on-tertiary-fixed": "#251908",
+            "on-primary": "#ffffff",
+            "on-background": "#1a1c1c",
+            "outline-variant": "#c5c6cc",
+            "on-surface-variant": "#44474b",
+            "on-secondary-fixed-variant": "#5a4400",
+            "on-primary-container": "#8791a0",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#555f6d",
+            "primary-container": "#202a36",
+            "secondary": "#755b11",
+            "tertiary-fixed": "#f6dfc2",
+            "pure-black": "#1A1A1A",
+            "primary": "#0b1621",
+            "surface-dim": "#dadada",
+            "on-primary-fixed-variant": "#3e4855",
+            "inverse-on-surface": "#f1f1f1",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#a18d74",
+            "inverse-primary": "#bdc7d7",
+            "tertiary-container": "#342714",
+            "tertiary": "#1e1303",
+            "on-surface": "#1a1c1c",
+            "surface-bright": "#f9f9f9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "gutter": "24px",
+            "container-max": "1280px",
+            "base": "8px",
+            "section-gap": "120px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["Montserrat"],
+            "headline-md": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "body-lg": ["Inter"],
+            "display-xl": ["Montserrat"],
+            "label-bold": ["Inter"],
+            "display-xl-mobile": ["Montserrat"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "display-xl": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+            "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      box-shadow: none !important;
+      border-bottom-color: #D4FF00 !important;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #202a36;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-8 bg-primary dark:bg-pure-black shadow-[32px_0_32px_rgba(32,42,54,0.06)] h-screen w-64 fixed left-0 top-0 z-50">
+<div class="px-6 mb-12">
+<h1 class="font-display-xl text-display-xl tracking-tighter text-pure-white leading-none">ELITE LABS</h1>
+<p class="font-label-bold text-label-bold text-energy-lime mt-1 tracking-widest uppercase">Admin Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 bg-primary-container text-energy-lime border-r-4 border-energy-lime shadow-sm transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-bold text-label-bold">Inventory</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-bold text-label-bold">Customers</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-6 pt-8 border-t border-primary-container">
+<button class="w-full bg-energy-lime text-primary font-label-bold text-label-bold py-3 mb-6 hover:brightness-110 transition-all">
+        View Storefront
+      </button>
+<a class="flex items-center gap-4 py-4 text-surface-variant hover:text-recovery-berry transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-bold text-label-bold">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="flex justify-between items-center ml-0 md:ml-64 px-margin-mobile md:px-margin-desktop w-full md:w-[calc(100%-16rem)] bg-surface dark:bg-background border-b border-surface-variant h-20 sticky top-0 z-40">
+<div class="flex items-center gap-8 flex-1">
+<h2 class="md:hidden font-headline-md text-headline-md font-extrabold text-primary">ELITE LABS</h2>
+<div class="hidden md:flex flex-1 max-w-md relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none focus:ring-2 focus:ring-energy-lime font-body-md text-body-md" placeholder="Search Inventory..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-focus-zest" href="#">Global Reports</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-focus-zest" href="#">System Status</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors" data-icon="notifications">notifications</button>
+<div class="h-10 w-10 bg-primary-container rounded-full flex items-center justify-center text-energy-lime overflow-hidden">
+<img alt="Elite Labs Admin Profile" class="w-full h-full object-cover" data-alt="A professional high-resolution close-up portrait of a fitness industry executive with a focused and authoritative expression. The lighting is crisp and laboratory-grade, reflecting a modern corporate aesthetic. The background is a minimalist studio setting with neutral gray tones, emphasizing trust and precision in a high-performance sports supplement brand context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEDVYtuiGkI92uexBWSiLxMKZI94q2t4kiCtXNgXE2KtRTh4_ACQwIKh4UEQHt80uxCNXsWplb9g7UrkhadMO28gy-velzV4514guJKnHgEIT62b19mDLwNRGbgEdKIfSkqSOuCECEqW2JqRr7b-4t0ru4Z-JLOl2aMRNPyuz8qXtBAuF02doBpHJ0UEyuQ-AWcc5wBs2AxUWqIZ-7PUD1qdM6X9S4PYk2wQ-LAX_SQFwq4914Jod2AuagXJ-IZV-bgUf5Ut6RRQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-0 md:ml-64 p-margin-mobile md:p-margin-desktop transition-all duration-300">
+<!-- Page Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 text-outline mb-2">
+<span class="font-label-bold text-label-bold uppercase tracking-widest">Inventory</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-primary">Edit Product</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary uppercase">ISO SHARK <span class="text-energy-lime">PLATINUM</span></h3>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-surface-container-highest text-primary font-label-bold text-label-bold hover:bg-surface-variant transition-colors">DISCARD</button>
+<button class="px-8 py-3 bg-primary text-pure-white font-label-bold text-label-bold hover:bg-energy-lime hover:text-primary transition-all shadow-[0_12px_24px_rgba(32,42,54,0.12)]">SAVE PRODUCT</button>
+</div>
+</div>
+<!-- Layout Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column: Form Details -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- General Info Card -->
+<section class="bg-pure-white p-8 shadow-[0_32px_32px_rgba(32,42,54,0.04)]">
+<h4 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-energy-lime pl-4">General Information</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-outline">PRODUCT NAME</label>
+<input class="w-full bg-surface border-0 border-b-2 border-surface-variant py-3 font-body-md text-body-md focus:border-energy-lime transition-all" type="text" value="ISO Shark Platinum Whey Isolate"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-outline">CATEGORY</label>
+<select class="w-full bg-surface border-0 border-b-2 border-surface-variant py-3 font-body-md text-body-md focus:border-energy-lime transition-all appearance-none">
+<option>Protein Powders</option>
+<option>Pre-Workouts</option>
+<option>Recovery</option>
+<option>Vitamins</option>
+</select>
+</div>
+<div class="col-span-full flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-outline">DESCRIPTION</label>
+<textarea class="w-full bg-surface border-0 border-b-2 border-surface-variant py-3 font-body-md text-body-md focus:border-energy-lime transition-all" rows="4">Pure whey protein isolate designed for maximum absorption and lean muscle recovery. Laboratory tested, sugar-free, and hyper-filtered for elite athletes.</textarea>
+</div>
+</div>
+</section>
+<!-- Pricing & Inventory Card -->
+<section class="bg-pure-white p-8 shadow-[0_32px_32px_rgba(32,42,54,0.04)]">
+<h4 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-energy-lime pl-4">Market &amp; Logistics</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-outline">BASE PRICE ($)</label>
+<div class="relative">
+<input class="w-full bg-surface border-0 border-b-2 border-surface-variant py-3 font-body-md text-body-md focus:border-energy-lime transition-all" type="number" value="74.99"/>
+<span class="absolute right-0 top-1/2 -translate-y-1/2 text-outline-variant font-label-bold text-label-bold">USD</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-outline">STOCK LEVEL</label>
+<input class="w-full bg-surface border-0 border-b-2 border-surface-variant py-3 font-body-md text-body-md focus:border-energy-lime transition-all" type="number" value="1240"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-outline">SKU ID</label>
+<input class="w-full bg-surface border-0 border-b-2 border-surface-variant py-3 font-body-md text-body-md focus:border-energy-lime transition-all" readonly="" type="text" value="EL-ISO-99-SHARK"/>
+</div>
+</div>
+</section>
+<!-- Nutritional Facts Bento -->
+<section class="bg-pure-white p-8 shadow-[0_32px_32px_rgba(32,42,54,0.04)]">
+<h4 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-energy-lime pl-4">Nutritional Matrix</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface p-6 flex flex-col items-center justify-center text-center">
+<span class="font-label-bold text-label-bold text-outline mb-1">PROTEIN</span>
+<input class="text-center w-full bg-transparent border-0 border-b-2 border-energy-lime font-headline-md text-headline-md text-primary" type="text" value="25g"/>
+</div>
+<div class="bg-surface p-6 flex flex-col items-center justify-center text-center">
+<span class="font-label-bold text-label-bold text-outline mb-1">CARBS</span>
+<input class="text-center w-full bg-transparent border-0 border-b-2 border-surface-variant font-headline-md text-headline-md text-primary" type="text" value="1g"/>
+</div>
+<div class="bg-surface p-6 flex flex-col items-center justify-center text-center">
+<span class="font-label-bold text-label-bold text-outline mb-1">FATS</span>
+<input class="text-center w-full bg-transparent border-0 border-b-2 border-surface-variant font-headline-md text-headline-md text-primary" type="text" value="0.5g"/>
+</div>
+<div class="bg-surface p-6 flex flex-col items-center justify-center text-center">
+<span class="font-label-bold text-label-bold text-outline mb-1">CALORIES</span>
+<input class="text-center w-full bg-transparent border-0 border-b-2 border-surface-variant font-headline-md text-headline-md text-primary" type="text" value="110"/>
+</div>
+</div>
+<div class="mt-8">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-primary text-pure-white">
+<th class="p-4 text-left font-label-bold text-label-bold uppercase">Supplement Fact</th>
+<th class="p-4 text-right font-label-bold text-label-bold uppercase">Amount</th>
+<th class="p-4 text-right font-label-bold text-label-bold uppercase">Action</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<tr class="border-b border-surface-variant">
+<td class="p-4">Leucine</td>
+<td class="p-4 text-right">2.8g</td>
+<td class="p-4 text-right"><button class="text-recovery-berry material-symbols-outlined" data-icon="delete">delete</button></td>
+</tr>
+<tr class="bg-surface-container-low border-b border-surface-variant">
+<td class="p-4">Isoleucine</td>
+<td class="p-4 text-right">1.6g</td>
+<td class="p-4 text-right"><button class="text-recovery-berry material-symbols-outlined" data-icon="delete">delete</button></td>
+</tr>
+<tr class="border-b border-surface-variant">
+<td class="p-4">Valine</td>
+<td class="p-4 text-right">1.5g</td>
+<td class="p-4 text-right"><button class="text-recovery-berry material-symbols-outlined" data-icon="delete">delete</button></td>
+</tr>
+</tbody>
+</table>
+<button class="mt-4 flex items-center gap-2 text-energy-lime font-label-bold text-label-bold bg-primary px-4 py-2 hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span> ADD COMPONENT
+            </button>
+</div>
+</section>
+</div>
+<!-- Right Column: Image & Status -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Media Upload -->
+<section class="bg-pure-white p-8 shadow-[0_32px_32px_rgba(32,42,54,0.04)] overflow-hidden">
+<h4 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-energy-lime pl-4">Product Visuals</h4>
+<div class="relative group cursor-pointer border-4 border-dashed border-surface-variant hover:border-energy-lime transition-all aspect-square flex items-center justify-center overflow-hidden bg-surface">
+<img alt="ISO Shark Product Bottle" class="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-500" data-alt="A professional studio product shot of a sleek, black ELITE LABS supplement bottle featuring a minimal, high-contrast label with neon lime green typography. The bottle is positioned on a clean white laboratory-grade surface with subtle reflective highlights. The background is a soft gradient of light gray, conveying a sense of premium quality, scientific precision, and athletic intensity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsOFTrorcs4uKYacr41AXQt9jdi2q9CtB9MAgGSK2iN0xQaE9ULPTaxN9YfitMj3H_MP5kxFUWYW7f8HMPl6XA8X9xar7fPuY86BRjie0TScGDgiyyZX6ybOj-9fnlzKovL_8yBjvyx2NFO4CgI6h3cm3J85JSR0xh5f1Z9NISg9NFsD96fGOeeXqzY8bDd1vOQQKpCa3TL_wvnpYsuLeSBkJF8M02TfZzk8VTurBaoG2WOHwwFJAGz7BB2bIeHku0jV2WYfv-hg"/>
+<div class="absolute inset-0 bg-primary bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-energy-lime text-5xl mb-2" data-icon="cloud_upload">cloud_upload</span>
+<p class="text-pure-white font-label-bold text-label-bold">CHANGE IMAGE</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-4">
+<div class="aspect-square bg-surface border border-surface-variant p-2"><img class="w-full h-full object-cover grayscale" data-alt="Close up detail of a nutritional label on a black fitness supplement bottle, showcasing clean typography and white technical data against a dark background in a high-contrast style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAv1LSDLKYvBY9p_NlbN8bPAIYrv0KqdiUolElDpm3mbEZnvp32048wXgdHfEO7yPik0RdSmrsdhkY4BRG0AfJZa29rc4cVlrgy0vEljxEOLK38JxhFWxGmXgWYAGc6R9xx8x7dOvkaYc9RHeXeG57_yBOY1U-DwyJhXlRufVBfiufk0ay3OynQGIufZ_EOYFzmUpYokvYmySGNIlWC9aqEs8M2n5m86Ig093W4DDmcZ5rquwd7XEEL4XaASSGgDeYD3IJbtSiag"/></div>
+<div class="aspect-square bg-surface border border-surface-variant p-2 flex items-center justify-center"><span class="material-symbols-outlined text-outline" data-icon="add_photo_alternate">add_photo_alternate</span></div>
+<div class="aspect-square bg-surface border border-surface-variant p-2 flex items-center justify-center"><span class="material-symbols-outlined text-outline" data-icon="add_photo_alternate">add_photo_alternate</span></div>
+</div>
+</section>
+<!-- Status & Tags -->
+<section class="bg-pure-white p-8 shadow-[0_32px_32px_rgba(32,42,54,0.04)]">
+<h4 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-energy-lime pl-4">Attributes</h4>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="font-label-bold text-label-bold text-outline">PUBLISH STATUS</span>
+<div class="flex items-center gap-2 px-3 py-1 bg-energy-lime bg-opacity-20 text-primary rounded-full">
+<span class="w-2 h-2 rounded-full bg-energy-lime"></span>
+<span class="font-label-bold text-label-sm">ACTIVE</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-bold text-label-bold text-outline">DIETARY TAGS</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-full flex items-center gap-1">Gluten Free <button class="material-symbols-outlined text-[14px]" data-icon="close">close</button></span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-full flex items-center gap-1">Sugar Free <button class="material-symbols-outlined text-[14px]" data-icon="close">close</button></span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-full flex items-center gap-1">Elite Grade <button class="material-symbols-outlined text-[14px]" data-icon="close">close</button></span>
+</div>
+<div class="relative mt-2">
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-surface-variant py-2 font-body-md text-body-md focus:border-energy-lime" placeholder="Add tag..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary material-symbols-outlined" data-icon="add_circle">add_circle</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="bg-error-container p-8 border-2 border-error">
+<h4 class="font-label-bold text-label-bold text-on-error-container uppercase mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="warning">warning</span> Archive Product
+          </h4>
+<p class="font-body-md text-body-md text-on-error-container mb-6 opacity-80">Archiving this product will hide it from the storefront and customer searches. Historical data will be preserved.</p>
+<button class="w-full bg-error text-pure-white font-label-bold text-label-bold py-3 hover:brightness-110 transition-all">ARCHIVE PERMANENTLY</button>
+</section>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Nav -->
+<footer class="md:hidden fixed bottom-0 left-0 right-0 bg-primary py-4 px-6 flex justify-between items-center z-50">
+<button class="material-symbols-outlined text-energy-lime" data-icon="dashboard">dashboard</button>
+<button class="material-symbols-outlined text-energy-lime" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</button>
+<button class="bg-energy-lime p-4 rounded-full -mt-12 shadow-lg material-symbols-outlined text-primary" data-icon="add">add</button>
+<button class="material-symbols-outlined text-surface-variant" data-icon="shopping_cart">shopping_cart</button>
+<button class="material-symbols-outlined text-surface-variant" data-icon="settings">settings</button>
+</footer>
+<script>
+    // Simple micro-interaction for input feedback
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.parentElement.classList.add('scale-[1.01]');
+        input.parentElement.classList.add('transition-transform');
+      });
+      input.addEventListener('blur', () => {
+        input.parentElement.classList.remove('scale-[1.01]');
+      });
+    });
+
+    // Handle button scale interactions
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+      btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+      btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+    });
+  </script>
+</body></html>

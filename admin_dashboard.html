@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELITE LABS | Admin Terminal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(212, 255, 0, 0.15) 0%, rgba(212, 255, 0, 0) 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #202a36; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fdd983",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed-dim": "#d9c3a7",
+                        "secondary-fixed-dim": "#e5c270",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#251a00",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#121c28",
+                        "on-secondary-container": "#785d13",
+                        "on-secondary": "#ffffff",
+                        "recovery-berry": "#FF2E63",
+                        "energy-lime": "#D4FF00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#54442f",
+                        "secondary-fixed": "#ffdf97",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "focus-zest": "#FF8C00",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#bdc7d7",
+                        "pure-white": "#FFFFFF",
+                        "outline": "#75777c",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed": "#d9e3f4",
+                        "on-tertiary-fixed": "#251908",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "outline-variant": "#c5c6cc",
+                        "on-surface-variant": "#44474b",
+                        "on-secondary-fixed-variant": "#5a4400",
+                        "on-primary-container": "#8791a0",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#555f6d",
+                        "primary-container": "#202a36",
+                        "secondary": "#755b11",
+                        "tertiary-fixed": "#f6dfc2",
+                        "pure-black": "#1A1A1A",
+                        "primary": "#0b1621",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed-variant": "#3e4855",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#a18d74",
+                        "inverse-primary": "#bdc7d7",
+                        "tertiary-container": "#342714",
+                        "tertiary": "#1e1303",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Montserrat"],
+                        "label-bold": ["Inter"],
+                        "display-xl-mobile": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-xl": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-pure-black shadow-[32px_0_32px_rgba(32,42,54,0.06)] flex flex-col h-full py-8 z-50">
+<div class="px-6 mb-10">
+<h1 class="font-display-xl text-[32px] tracking-tighter text-pure-white leading-none">ELITE LABS</h1>
+<p class="font-label-bold text-label-bold text-energy-lime uppercase mt-1">Admin Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 px-6 py-4 bg-primary-container text-energy-lime border-r-4 border-energy-lime transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-bold text-label-bold">Inventory</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-bold text-label-bold">Customers</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-energy-lime text-primary py-3 rounded-lg font-label-bold flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="open_in_new">open_in_new</span>
+                View Storefront
+            </button>
+<a class="flex items-center gap-4 py-6 mt-4 text-surface-variant hover:text-recovery-berry transition-colors border-t border-white/10" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-bold text-label-bold">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Shell -->
+<header class="docked full-width h-20 top-0 sticky z-40 bg-surface dark:bg-background border-b border-surface-variant flex justify-between items-center px-margin-desktop w-full glass-panel">
+<div class="flex items-center gap-8 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2.5 pl-12 pr-4 focus:ring-2 focus:ring-energy-lime font-body-md" placeholder="Search terminal..." type="text"/>
+</div>
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-primary dark:text-energy-lime font-bold border-b-2 border-primary dark:border-energy-lime pb-1 font-label-bold" href="#">Global Reports</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-focus-zest transition-all font-label-bold" href="#">System Status</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-recovery-berry rounded-full"></span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a high-performance athletic coach wearing a sleek black performance polo. The lighting is studio-quality with sharp highlights and soft shadows, creating an authoritative yet modern look. The background is a clean, neutral gray, fitting the laboratory-grade trust aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN-_hPSr2QI_e4eWkDb_LzGf28KxIDCapPfBUIOsWVo1zhNILmnSpoXJMol4D74XNw-QlJQd_lxRkISctsrl_qYZ6N2zhEQp3aMmI1Wqn5qv2JzFdxEULrYUyp41LCawIzDW1CcHSnC8Z_DnxgXN8kPErQRAQnmn6FlSnsDL2hZQRC4q00AyP1OzsccLCzzKYeV1kBIpec0w6v_vZ4e3qYVBewZ8Y2pdOVr6SB47B1LI9N8GIPnZSUjWs5HSdIswXrava-KiF57A"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="p-margin-desktop">
+<div class="mb-10">
+<h2 class="font-headline-lg text-headline-lg text-primary">Performance Overview</h2>
+<p class="text-on-surface-variant font-body-lg">Real-time metrics from the global distribution network.</p>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-gutter">
+<!-- KPI 1 -->
+<div class="bg-pure-white p-8 rounded-xl shadow-[32px_0_32px_rgba(32,42,54,0.04)] border-l-4 border-energy-lime flex flex-col justify-between group hover:shadow-[32px_0_32px_rgba(32,42,54,0.08)] transition-all">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-2">Total Revenue</p>
+<h3 class="font-display-xl text-4xl text-primary">$1,284,592</h3>
+</div>
+<div class="flex items-center gap-2 mt-4 text-green-600 font-label-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
+<span>+12.4% vs last mo.</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-pure-white p-8 rounded-xl shadow-[32px_0_32px_rgba(32,42,54,0.04)] border-l-4 border-primary flex flex-col justify-between group hover:shadow-[32px_0_32px_rgba(32,42,54,0.08)] transition-all">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-2">Total Orders</p>
+<h3 class="font-display-xl text-4xl text-primary">8,432</h3>
+</div>
+<div class="flex items-center gap-2 mt-4 text-green-600 font-label-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
+<span>+5.2% vs last mo.</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-pure-white p-8 rounded-xl shadow-[32px_0_32px_rgba(32,42,54,0.04)] border-l-4 border-focus-zest flex flex-col justify-between group hover:shadow-[32px_0_32px_rgba(32,42,54,0.08)] transition-all">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-2">Active Customers</p>
+<h3 class="font-display-xl text-4xl text-primary">45.2k</h3>
+</div>
+<div class="flex items-center gap-2 mt-4 text-green-600 font-label-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="group">group</span>
+<span>1.2k new this week</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-primary p-8 rounded-xl shadow-[32px_0_32px_rgba(32,42,54,0.04)] flex flex-col justify-between group hover:shadow-[32px_0_32px_rgba(32,42,54,0.08)] transition-all relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label-bold text-label-bold text-surface-variant uppercase tracking-widest mb-2">Low Stock Alerts</p>
+<h3 class="font-display-xl text-4xl text-energy-lime">14</h3>
+</div>
+<div class="flex items-center gap-2 mt-4 text-recovery-berry font-label-bold relative z-10">
+<span class="material-symbols-outlined text-[18px]" data-icon="warning">warning</span>
+<span>Immediate action required</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="inventory">inventory</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<!-- Main Chart Area -->
+<div class="lg:col-span-2 bg-pure-white p-8 rounded-xl shadow-[32px_0_32px_rgba(32,42,54,0.04)]">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Sales Performance</h4>
+<p class="text-on-surface-variant font-label-bold">Projected Revenue vs Actuals</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container rounded-lg font-label-bold text-primary hover:bg-energy-lime transition-all">Week</button>
+<button class="px-4 py-2 bg-primary text-energy-lime rounded-lg font-label-bold">Month</button>
+</div>
+</div>
+<!-- Simulated Chart Visual -->
+<div class="h-[400px] w-full relative">
+<div class="absolute inset-0 flex items-end justify-between px-4">
+<div class="w-12 bg-primary-container/20 rounded-t-lg h-[40%]"></div>
+<div class="w-12 bg-primary-container/20 rounded-t-lg h-[55%]"></div>
+<div class="w-12 bg-primary-container/20 rounded-t-lg h-[45%]"></div>
+<div class="w-12 bg-primary-container/20 rounded-t-lg h-[75%]"></div>
+<div class="w-12 bg-primary-container/20 rounded-t-lg h-[90%]"></div>
+<div class="w-12 bg-primary-container/20 rounded-t-lg h-[60%]"></div>
+<div class="w-12 bg-energy-lime rounded-t-lg h-[85%] relative group">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-primary text-pure-white text-[12px] py-1 px-3 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                    $142,000
+                                </div>
+</div>
+</div>
+<!-- SVG Line overlay -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none">
+<path d="M0 320 Q 200 280, 400 240 T 800 120 T 1200 60" fill="none" stroke="#D4FF00" stroke-linecap="round" stroke-width="4"></path>
+<path d="M0 320 Q 200 280, 400 240 T 800 120 T 1200 60 V 400 H 0 Z" fill="url(#chartFill)" opacity="0.1"></path>
+<defs>
+<lineargradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#D4FF00"></stop>
+<stop offset="100%" stop-color="transparent"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- Inventory Heatmap / Low Stock -->
+<div class="bg-pure-white p-8 rounded-xl shadow-[32px_0_32px_rgba(32,42,54,0.04)]">
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Inventory Status</h4>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary flex items-center justify-center rounded-lg">
+<img class="w-10 h-10 object-contain" data-alt="A premium black plastic container of whey protein isolate with clean, high-contrast typography in energy-lime and white. The background is a crisp, bright athletic training facility, emphasizing high-performance and laboratory purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeINvZ90AJl3FD87-A1-4UYs8J2xh7urZvwbo9LkVjwvS-ctmB1SHADVMibg8fdbfUdRH2HDW6KJWn69LzzvqvjCdYO99ICGA4_D-bipxggQd7gPAOnnKRTv_pzBom1_6FeupJjRf5tWT4aO5XBKKWPf1n81LFV1_uam8WCRwdoau59Jbh_AmOphUwpdZB-fHJ2QSiNh2H4a31XZ_UP67MNN-9Cce-DZaTPC3snmHd9q8LgQWV7hdUbMFQAMc8MlxuglO-EF3QUw"/>
+</div>
+<div>
+<p class="font-label-bold text-primary">Elite ISO-Whey</p>
+<p class="text-[12px] text-on-surface-variant">Vanilla Blast • 2kg</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-bold text-recovery-berry">12 Units</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Critically Low</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary flex items-center justify-center rounded-lg">
+<img class="w-10 h-10 object-contain" data-alt="A sleek, matte-finish bottle of multi-vitamin capsules with a vibrant orange and lime green label. The visual style is aggressive and modern, featuring diagonal graphical elements and sharp shadows on a pristine white surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA76eBXCFL1-2DNbbJZbwLdtKc-aC1s3jDt0-1G-aht2NTGM7h9k1GZ9f2hvrgYQHv0iQWioLBy6nhjxPkUwDV9e89NCh_nMzfM6YEBeoZC0POaizSpYL2CcUxxQTu-8U_gZ3Mrgq8u-W0_hbjwwpSpIoWRA_lHXQx66trOVaimXn7Ql6C7C_m1aVkvoN56CxEin6a6HVW4T7gTYBGW8366PVXsTC0Y4YQpUjNhvNXNL914Sl-XtmEaOkP6ec-jK3IPtjvRPovkKw"/>
+</div>
+<div>
+<p class="font-label-bold text-primary">Elite V-Multi</p>
+<p class="text-[12px] text-on-surface-variant">Daily Core • 60 Caps</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-bold text-focus-zest">45 Units</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Restock Soon</p>
+</div>
+</div>
+<button class="w-full py-4 border-2 border-primary text-primary font-label-bold rounded-lg hover:bg-primary hover:text-energy-lime transition-all">
+                            Generate Restock Report
+                        </button>
+</div>
+</div>
+</div>
+<!-- Recent Orders Table -->
+<div class="mt-gutter bg-pure-white rounded-xl shadow-[32px_0_32px_rgba(32,42,54,0.04)] overflow-hidden">
+<div class="p-8 border-b border-surface-variant flex justify-between items-center">
+<h4 class="font-headline-md text-headline-md text-primary">Recent Orders</h4>
+<button class="text-primary font-label-bold flex items-center gap-1 hover:text-focus-zest transition-colors">
+                        View All Orders
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface">
+<tr>
+<th class="px-8 py-4 font-label-bold text-on-surface-variant uppercase text-[12px]">Order ID</th>
+<th class="px-8 py-4 font-label-bold text-on-surface-variant uppercase text-[12px]">Customer</th>
+<th class="px-8 py-4 font-label-bold text-on-surface-variant uppercase text-[12px]">Date</th>
+<th class="px-8 py-4 font-label-bold text-on-surface-variant uppercase text-[12px]">Total</th>
+<th class="px-8 py-4 font-label-bold text-on-surface-variant uppercase text-[12px]">Status</th>
+<th class="px-8 py-4 font-label-bold text-on-surface-variant uppercase text-[12px] text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- Order 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-9421</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-[12px] font-bold text-on-secondary-container">MJ</div>
+<span class="font-body-md">Marcus Jordan</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-8 py-6 font-bold">$184.50</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 rounded-full bg-green-100 text-green-800 text-[12px] font-label-bold uppercase">Paid</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-primary-container hover:text-energy-lime rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-9420</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center text-[12px] font-bold text-primary">SH</div>
+<span class="font-body-md">Sarah Hughes</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-8 py-6 font-bold">$92.00</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-[12px] font-label-bold uppercase">Shipped</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-primary-container hover:text-energy-lime rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-9419</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-[12px] font-bold text-tertiary">DA</div>
+<span class="font-body-md">David Ames</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant">Oct 23, 2023</td>
+<td class="px-8 py-6 font-bold">$240.15</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-[12px] font-label-bold uppercase">Pending</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-primary-container hover:text-energy-lime rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<footer class="mt-section-gap p-margin-desktop bg-surface-container border-t border-surface-variant">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-label-sm">© 2023 ELITE LABS ADMIN TERMINAL. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="text-label-sm font-label-bold text-primary hover:text-focus-zest uppercase" href="#">Documentation</a>
+<a class="text-label-sm font-label-bold text-primary hover:text-focus-zest uppercase" href="#">Privacy Protocol</a>
+<a class="text-label-sm font-label-bold text-primary hover:text-focus-zest uppercase" href="#">Server Log</a>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for active scaling
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('scale-95');
+                el.classList.add('duration-150');
+                el.classList.add('ease-in-out');
+            });
+            el.addEventListener('mouseup', () => {
+                el.classList.remove('scale-95');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('scale-95');
+            });
+        });
+
+        // Atmospheric mouse glow effect on dashboard cards
+        const cards = document.querySelectorAll('.bg-pure-white');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(212, 255, 0, 0.03) 0%, rgba(255, 255, 255, 1) 50%)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.background = '#FFFFFF';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ISO SHARK | ELITE LABS SUPPLEMENTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f3131",
+                        "error": "#ba1a1a",
+                        "outline": "#75777c",
+                        "on-background": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "secondary": "#755b11",
+                        "secondary-fixed": "#ffdf97",
+                        "surface": "#f9f9f9",
+                        "tertiary-container": "#342714",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#e5c270",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#44474b",
+                        "on-secondary-fixed": "#251a00",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "focus-zest": "#FF8C00",
+                        "primary-fixed": "#d9e3f4",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#f6dfc2",
+                        "inverse-primary": "#bdc7d7",
+                        "secondary-container": "#fdd983",
+                        "surface-tint": "#555f6d",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary": "#1e1303",
+                        "surface-dim": "#dadada",
+                        "on-secondary-container": "#785d13",
+                        "primary-container": "#202a36",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#3e4855",
+                        "energy-lime": "#D4FF00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#bdc7d7",
+                        "on-primary-fixed": "#121c28",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#c5c6cc",
+                        "primary": "#0b1621",
+                        "on-secondary-fixed-variant": "#5a4400",
+                        "on-primary-container": "#8791a0",
+                        "on-secondary": "#ffffff",
+                        "pure-black": "#1A1A1A",
+                        "on-tertiary-container": "#a18d74",
+                        "tertiary-fixed-dim": "#d9c3a7",
+                        "recovery-berry": "#FF2E63",
+                        "pure-white": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#54442f",
+                        "on-tertiary-fixed": "#251908",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "display-xl-mobile": ["Montserrat"],
+                        "display-xl": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "display-xl": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-thumb {
+            border-color: theme('colors.primary');
+            box-shadow: 0 0 0 2px theme('colors.energy-lime');
+        }
+        .diagonal-accent {
+            clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-primary/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-primary-container shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-display-xl-mobile text-headline-md tracking-tighter text-primary dark:text-primary-fixed">ELITE LABS</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold text-primary dark:text-energy-lime border-b-2 border-primary dark:border-energy-lime pb-1" href="#">Creatine</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-on-primary-container hover:text-energy-lime dark:hover:text-energy-lime transition-all duration-300" href="#">Protein</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-on-primary-container hover:text-energy-lime dark:hover:text-energy-lime transition-all duration-300" href="#">Amino Acids</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-on-primary-container hover:text-energy-lime dark:hover:text-energy-lime transition-all duration-300" href="#">Calculator</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant dark:text-on-primary-container hover:text-energy-lime dark:hover:text-energy-lime transition-all duration-300" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary" data-icon="search">search</button>
+<button class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-bold text-label-bold hover:bg-energy-lime hover:text-primary transition-all active:scale-95 duration-150">Contact</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- PDP Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left: Product Image Carousel -->
+<div class="lg:col-span-7 space-y-gutter">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-square flex items-center justify-center group shadow-sm transition-all duration-300 hover:shadow-xl">
+<img alt="ISO SHARK Protein" class="w-4/5 h-auto object-contain transition-transform duration-700 group-hover:scale-105" data-alt="A high-end commercial product shot of a large white supplement tub labeled ISO SHARK against a clean, light gray professional laboratory background. The tub is surrounded by sharp, hyper-realistic strawberry splashes and fresh sliced strawberries. The lighting is crisp and multi-directional, highlighting the premium texture of the packaging. The overall aesthetic is athletic and energetic, with high-contrast shadows and a modern corporate feel." id="main-product-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4QggBwrIxjG_2Z6W1zsPuud4H17s3d80ceVtJOuBCKKfff84FFBc1QRSs05Og0DCWmZf-n5qZPsAufI4u0JWKZ0qUknOrLVR0wIfJQ7xWx2jt4DTYSIyb6wedBtW-IXGBF5jU1eX5DU2l0T7YnFpFiCGUkdl_317f-zU0BHSXu7y1j_wvqADaF50XVmPVCiVtqESKtwwEHuTIwb_ICA9Tgn1AxW8EkHQ0qxohoDh-ZuAbDC2SsfX3Y-bGC0lMWcDDvM_8rcVUNQ"/>
+<div class="absolute top-6 left-6 flex flex-col gap-2">
+<span class="bg-energy-lime text-primary px-3 py-1 font-label-bold text-label-bold rounded-full">BEST SELLER</span>
+<span class="bg-recovery-berry text-pure-white px-3 py-1 font-label-bold text-label-bold rounded-full">NEW FLAVOR</span>
+</div>
+<button class="absolute left-4 top-1/2 -translate-y-1/2 bg-pure-white/80 p-2 rounded-full shadow-lg hover:bg-pure-white transition-colors" onclick="prevSlide()">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 bg-pure-white/80 p-2 rounded-full shadow-lg hover:bg-pure-white transition-colors" onclick="nextSlide()">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="active-thumb rounded-lg overflow-hidden bg-surface-container-high aspect-square border-2 border-transparent transition-all" onclick="updateImage(0)">
+<img alt="View 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoa3ATPYPEBp_B3O21tOr86m_hMYJPKpQIQ4GC2qg6stWswftikj51-IttrZHNGWSRgNOGo_HX2EPfFMp7T49AsNn3xbTkF3V-D8KscMT5-74-pTSMPgUEESPC_USUGz0AwLpraK6itstha-gNEmSQBKUUVf7-bB9p9hCl3-Uv2PJJpf6hzdUTaWtzZ91nT14KTaR-lSIWVuNRGGsX-otAAoJY6XEnFZFqjn7cIHkbUKOq-804iN8MXfn4xGOOmkWXkoAEYXB6eQ"/>
+</button>
+<button class="rounded-lg overflow-hidden bg-surface-container-high aspect-square border-2 border-transparent transition-all" onclick="updateImage(1)">
+<img alt="View 2" class="w-full h-full object-cover" data-alt="Close up detailed shot of the nutritional information panel on a high-performance protein supplement tub. The text is sharp and legible against a clean white and navy blue label. Soft professional studio lighting highlights the texture of the container. The background is a blurred athletic gym environment, maintaining a focus on scientific transparency and quality ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuPpVHPZ_zpsqNyEQ8uWibJreazI9oWhYZxXZn2tUqusfd36YtmNDcwhqUhRIJBcZAalo_M4fTaHC0-iZPdxHCEqh0fxlZjua9GtIraqY3YQdOv7KiWlnAZxFJJgkGodidAjiSCIah9SaeojSQYRU0SSfukmRlutxMTvdT9kwFAwPu_1hHhHeYUZLe-C9KPIpny1zXy9RBU_60fouRw5vLv6eoCial_x1yoAM5BR8jP-ZJPwJ6v42p492Fe1x0asd3hzlBIF5IeQ"/>
+</button>
+<button class="rounded-lg overflow-hidden bg-surface-container-high aspect-square border-2 border-transparent transition-all" onclick="updateImage(2)">
+<img alt="View 3" class="w-full h-full object-cover" data-alt="Dynamic action shot of a high-quality protein powder scoop being pulled out of a tub, with fine white powder particles creating a soft cloud effect. The lighting is high-key and dramatic, casting long, soft shadows. The setting is a minimalist, modern kitchen with marble countertops, reinforcing a premium, healthy lifestyle aesthetic. Vibrant red strawberry accents are visible in the foreground." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQzdht30rsLVKPfJspO4CEFuuy5eepKHvQAMcEoXc6gEc2-noF9CEou7i-MA7WqRjSubq4MfJEAIQ0hMoD8PYcgrzHe4Ecuruou9PY7KlCkoBMFKPOShaQoSAqF8Es9TUHpAlyDXRvVuzjDskKbsUuPri1c-59Kbw2Ql7epFgOa1t8b3sPuBrZ-SrsleIQgNrlaI36gPXJJfZOEY_HDxIAcSQ3Jcfq2_fywapcsjf1JT2P-Iy4Gckr3xoEsEmUhjMK6x1z1IA5YQ"/>
+</button>
+<button class="rounded-lg overflow-hidden bg-surface-container-high aspect-square border-2 border-transparent transition-all" onclick="updateImage(3)">
+<img alt="View 4" class="w-full h-full object-cover" data-alt="Flat lay lifestyle composition of the supplement product alongside fresh fitness gear like a high-end shaker bottle and a leather jump rope. The scene is set on a light gray concrete surface with bright, natural morning light coming from the side. The overall mood is motivational and focused on high performance. The color palette is strictly limited to navy, white, and energy lime accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7ThN2ARKXjfrthzqapMaplRCEncueFLTF4X_Hy7scis9NpAM4r_mloukKzmPqL346ttrC_fslsCgSbJQRwFJIHXjGjv5TxR_lGN3OvLVtmCp_FfKyzkTu3u-H638ftPVEYDDJF2Hf2byJa7YSeFq-AqX7IKRYEkMBIfIMbB2xH5Z-1hU2fBw0Budh35cPXN2lA5srJl4nc_1zfIwNRMuOnKkxsxamWwGbIKGJjVOCkz3u-G6VS4Lwgsgnr3gIeIh_OWkG3d6KFA"/>
+</button>
+</div>
+</div>
+<!-- Right: Product Details -->
+<div class="lg:col-span-5 space-y-8">
+<div>
+<nav class="flex text-label-sm font-label-sm text-on-surface-variant gap-2 mb-4">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" href="#">Proteins</a>
+<span>/</span>
+<span class="text-primary font-bold">ISO SHARK</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-primary uppercase leading-tight mb-2">ISO SHARK WHEY</h1>
+<div class="flex items-center gap-4">
+<div class="flex text-focus-zest">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star_half" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">(124 Reviews)</span>
+</div>
+</div>
+<div class="flex items-baseline gap-4">
+<span class="font-headline-lg text-headline-lg text-primary">$64.99</span>
+<span class="font-headline-md text-headline-md text-outline line-through">$84.99</span>
+<span class="text-recovery-berry font-label-bold text-label-bold">SAVE 24%</span>
+</div>
+<!-- Flavor Selection -->
+<div class="space-y-4">
+<span class="font-label-bold text-label-bold block uppercase tracking-wider">Select Flavor: <span class="text-on-surface-variant" id="current-flavor">Strawberry</span></span>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-3 rounded-lg border-2 border-primary bg-primary text-pure-white font-label-bold text-label-bold transition-all flavor-btn" onclick="setFlavor('Strawberry')">Strawberry</button>
+<button class="px-6 py-3 rounded-lg border-2 border-outline-variant hover:border-primary font-label-bold text-label-bold transition-all flavor-btn" onclick="setFlavor('Chocolate')">Chocolate</button>
+<button class="px-6 py-3 rounded-lg border-2 border-outline-variant hover:border-primary font-label-bold text-label-bold transition-all flavor-btn" onclick="setFlavor('Vanilla')">Vanilla</button>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="space-y-4">
+<span class="font-label-bold text-label-bold block uppercase tracking-wider">Select Size: <span class="text-on-surface-variant" id="current-size">5lb (2.2kg)</span></span>
+<div class="flex gap-3">
+<button class="flex-1 py-3 rounded-lg border-2 border-outline-variant hover:border-primary font-label-bold text-label-bold transition-all size-btn" onclick="setSize('2lb')">2lb</button>
+<button class="flex-1 py-3 rounded-lg border-2 border-primary bg-primary-container text-on-primary font-label-bold text-label-bold transition-all size-btn" onclick="setSize('5lb')">5lb</button>
+</div>
+</div>
+<!-- Add to Cart & Shipping -->
+<div class="space-y-4 pt-4">
+<div class="flex gap-4">
+<div class="flex items-center bg-surface-container-high rounded-lg px-4 border border-outline-variant">
+<button class="p-2 hover:text-primary" onclick="changeQty(-1)"><span class="material-symbols-outlined" data-icon="remove">remove</span></button>
+<input class="w-12 bg-transparent text-center border-none focus:ring-0 font-label-bold" id="qty" readonly="" type="text" value="1"/>
+<button class="p-2 hover:text-primary" onclick="changeQty(1)"><span class="material-symbols-outlined" data-icon="add">add</span></button>
+</div>
+<button class="flex-1 bg-primary text-pure-white py-4 rounded-lg font-label-bold text-label-bold uppercase tracking-widest hover:bg-energy-lime hover:text-primary transition-all active:scale-95 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_shipping">local_shipping</span>
+                        Free standard shipping on orders over $100. Delivered in 3-5 days.
+                    </p>
+</div>
+<!-- Icons Benefits -->
+<div class="grid grid-cols-3 gap-4 pt-8 border-t border-outline-variant">
+<div class="text-center space-y-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="rocket_launch">rocket_launch</span>
+<p class="font-label-bold text-label-sm uppercase">Rapid Recovery</p>
+</div>
+<div class="text-center space-y-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified">verified</span>
+<p class="font-label-bold text-label-sm uppercase">Pure Isolate</p>
+</div>
+<div class="text-center space-y-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="health_and_safety">health_and_safety</span>
+<p class="font-label-bold text-label-sm uppercase">Banned Substance Free</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Info Bento Section -->
+<section class="mt-section-gap grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Key Benefits -->
+<div class="lg:col-span-7 space-y-gutter">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase">Engineered for Performance</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4 hover:shadow-lg transition-all border-l-4 border-energy-lime">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="fitness_center">fitness_center</span>
+<h3 class="font-headline-md text-headline-md text-primary">Muscle Growth</h3>
+<p class="text-on-surface-variant">High biological value protein with a complete amino acid profile to fuel hyper-trophy and strength gains.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4 hover:shadow-lg transition-all border-l-4 border-recovery-berry">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="speed">speed</span>
+<h3 class="font-headline-md text-headline-md text-primary">Ultra-Fast Digestion</h3>
+<p class="text-on-surface-variant">Micro-filtered isolate technology ensures your muscles get the nutrients they need exactly when they need them.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4 hover:shadow-lg transition-all border-l-4 border-focus-zest">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="science">science</span>
+<h3 class="font-headline-md text-headline-md text-primary">Zero Filler</h3>
+<p class="text-on-surface-variant">Strict transparency policy: no amino spiking, no hidden sugars, and only 2g of total carbs per serving.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4 hover:shadow-lg transition-all border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="workspace_premium">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md text-primary">Premium Taste</h3>
+<p class="text-on-surface-variant">Gourmet flavor profiles developed by food scientists to deliver a smooth, non-chalky texture every time.</p>
+</div>
+</div>
+</div>
+<!-- Nutritional Facts Card -->
+<div class="lg:col-span-5">
+<div class="bg-primary text-pure-white p-8 rounded-xl shadow-2xl relative overflow-hidden sticky top-32">
+<div class="absolute top-0 right-0 w-32 h-32 bg-energy-lime/20 diagonal-accent -mr-12 -mt-12"></div>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-6">Nutritional Facts</h2>
+<p class="font-label-bold text-label-bold text-on-primary-container mb-8">Serving Size: 1 Scoop (30g)</p>
+<div class="space-y-4 font-body-md">
+<div class="flex justify-between border-b border-primary-container pb-2">
+<span>Calories</span>
+<span class="font-bold">120 kcal</span>
+</div>
+<div class="flex justify-between border-b border-primary-container pb-2">
+<span class="flex items-center gap-2">Protein <span class="bg-energy-lime text-primary px-2 text-[10px] rounded">92%</span></span>
+<span class="font-bold">25g</span>
+</div>
+<div class="flex justify-between border-b border-primary-container pb-2">
+<span>Total Carbohydrates</span>
+<span class="font-bold">2g</span>
+</div>
+<div class="flex justify-between border-b border-primary-container pb-2 pl-4 text-on-primary-container">
+<span>Sugars</span>
+<span class="font-bold">0g</span>
+</div>
+<div class="flex justify-between border-b border-primary-container pb-2 pl-4 text-on-primary-container">
+<span>Fiber</span>
+<span class="font-bold">1g</span>
+</div>
+<div class="flex justify-between border-b border-primary-container pb-2">
+<span>Total Fat</span>
+<span class="font-bold">0.5g</span>
+</div>
+<div class="flex justify-between border-b border-primary-container pb-2">
+<span>BCAAs</span>
+<span class="font-bold">5.5g</span>
+</div>
+<div class="flex justify-between border-b border-primary-container pb-2">
+<span>Glutamine</span>
+<span class="font-bold">4.2g</span>
+</div>
+</div>
+<div class="mt-8 p-4 bg-primary-container/50 rounded italic text-label-sm text-on-primary-container">
+                        *Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-pure-black mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto text-pure-white">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-black text-pure-white mb-6">ELITE LABS</div>
+<p class="text-body-md text-on-primary-container max-w-xs">Purity. Performance. Power. We provide elite athletes with the cleanest science-backed supplements in the industry.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold mb-6 text-energy-lime">SHOP</h4>
+<ul class="space-y-4 text-on-primary-container">
+<li><a class="hover:text-pure-white transition-colors" href="#">Best Sellers</a></li>
+<li><a class="hover:text-pure-white transition-colors" href="#">Protein Isolates</a></li>
+<li><a class="hover:text-pure-white transition-colors" href="#">Pre-Workouts</a></li>
+<li><a class="hover:text-pure-white transition-colors" href="#">Bundles</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold mb-6 text-energy-lime">SUPPORT</h4>
+<ul class="space-y-4 text-on-primary-container">
+<li><a class="hover:text-pure-white transition-colors" href="#">Shipping Info</a></li>
+<li><a class="hover:text-pure-white transition-colors" href="#">Returns</a></li>
+<li><a class="hover:text-pure-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-pure-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold mb-6 text-energy-lime">FOLLOW US</h4>
+<div class="flex gap-4 mb-8">
+<a class="w-10 h-10 rounded-full border border-on-primary-container flex items-center justify-center hover:bg-energy-lime hover:text-primary hover:border-energy-lime transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="facebook">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-on-primary-container flex items-center justify-center hover:bg-energy-lime hover:text-primary hover:border-energy-lime transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="photo_camera">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-on-primary-container flex items-center justify-center hover:bg-energy-lime hover:text-primary hover:border-energy-lime transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-primary-container">
+                    © 2024 ELITE LABS SUPPLEMENTS. ALL RIGHTS RESERVED.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        const images = [
+            "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1579722820308-d74e5719d23e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1546483875-ad9014c88eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        ];
+        let currentIndex = 0;
+
+        function updateImage(index) {
+            currentIndex = index;
+            document.getElementById('main-product-image').src = images[index];
+            const thumbs = document.querySelectorAll('.grid button');
+            thumbs.forEach((t, i) => {
+                if(i === index) t.classList.add('active-thumb');
+                else t.classList.remove('active-thumb');
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage(currentIndex);
+        }
+
+        function changeQty(delta) {
+            const qtyInput = document.getElementById('qty');
+            let val = parseInt(qtyInput.value) + delta;
+            if (val < 1) val = 1;
+            qtyInput.value = val;
+        }
+
+        function setFlavor(flavor) {
+            document.getElementById('current-flavor').innerText = flavor;
+            const btns = document.querySelectorAll('.flavor-btn');
+            btns.forEach(btn => {
+                if(btn.innerText === flavor) {
+                    btn.classList.add('bg-primary', 'text-pure-white', 'border-primary');
+                    btn.classList.remove('border-outline-variant');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-pure-white', 'border-primary');
+                    btn.classList.add('border-outline-variant');
+                }
+            });
+        }
+
+        function setSize(size) {
+            document.getElementById('current-size').innerText = size + (size === '2lb' ? ' (0.9kg)' : ' (2.2kg)');
+            const btns = document.querySelectorAll('.size-btn');
+            btns.forEach(btn => {
+                if(btn.innerText === size) {
+                    btn.classList.add('bg-primary-container', 'text-on-primary', 'border-primary');
+                    btn.classList.remove('border-outline-variant');
+                } else {
+                    btn.classList.remove('bg-primary-container', 'text-on-primary', 'border-primary');
+                    btn.classList.add('border-outline-variant');
+                }
+            });
+        }
+    </script>
+</body></html>

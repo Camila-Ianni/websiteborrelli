@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Labs Admin - Order Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fdd983",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed-dim": "#d9c3a7",
+                        "secondary-fixed-dim": "#e5c270",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#251a00",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#121c28",
+                        "on-secondary-container": "#785d13",
+                        "on-secondary": "#ffffff",
+                        "recovery-berry": "#FF2E63",
+                        "energy-lime": "#D4FF00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#54442f",
+                        "secondary-fixed": "#ffdf97",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "focus-zest": "#FF8C00",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed-dim": "#bdc7d7",
+                        "pure-white": "#FFFFFF",
+                        "outline": "#75777c",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed": "#d9e3f4",
+                        "on-tertiary-fixed": "#251908",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "outline-variant": "#c5c6cc",
+                        "on-surface-variant": "#44474b",
+                        "on-secondary-fixed-variant": "#5a4400",
+                        "on-primary-container": "#8791a0",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#555f6d",
+                        "primary-container": "#202a36",
+                        "secondary": "#755b11",
+                        "tertiary-fixed": "#f6dfc2",
+                        "pure-black": "#1A1A1A",
+                        "primary": "#0b1621",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed-variant": "#3e4855",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#a18d74",
+                        "inverse-primary": "#bdc7d7",
+                        "tertiary-container": "#342714",
+                        "tertiary": "#1e1303",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Montserrat"],
+                        "label-bold": ["Inter"],
+                        "display-xl-mobile": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-xl": ["80px", {"lineHeight": "84px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+        .data-grid-row:hover {
+            background-color: #f4f4f4;
+            transition: all 0.2s ease;
+        }
+        .sidebar-active {
+            box-shadow: inset 4px 0 0 0 #D4FF00;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface bg-background">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary flex flex-col py-8 shadow-[32px_0_32px_rgba(32,42,54,0.06)] z-50">
+<div class="px-6 mb-12">
+<h1 class="font-display-xl text-display-xl tracking-tighter text-pure-white leading-none">ELITE LABS</h1>
+<p class="font-label-bold text-label-bold text-energy-lime mt-1 uppercase tracking-widest">Admin Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container group" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-bold text-label-bold">Inventory</span>
+</a>
+<!-- Active State: Orders -->
+<a class="flex items-center gap-4 px-6 py-4 bg-primary-container text-energy-lime border-r-4 border-energy-lime active:scale-95 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container group" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-bold text-label-bold">Customers</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-surface-variant hover:text-pure-white transition-colors hover:bg-primary-container group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-6 border-t border-on-primary-container/20 pt-6">
+<button class="w-full flex items-center justify-center gap-2 bg-energy-lime text-primary py-3 rounded font-label-bold text-label-bold hover:bg-pure-white transition-all transform hover:scale-[1.02]">
+<span>View Storefront</span>
+</button>
+<button class="mt-4 flex items-center gap-4 px-0 py-4 text-surface-variant hover:text-recovery-berry transition-colors">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-bold text-label-bold">Log Out</span>
+</button>
+</div>
+</aside>
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="docked full-width h-20 top-0 sticky z-40 bg-surface border-b border-surface-variant flex justify-between items-center ml-64 px-margin-desktop w-[calc(100%-16rem)]">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-energy-lime rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg py-2.5 pl-10 pr-4 text-body-md focus:ring-0" placeholder="Search orders, transactions, IDs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-focus-zest transition-all font-label-bold text-label-bold" href="#">Global Reports</a>
+<a class="text-on-surface-variant hover:text-focus-zest transition-all font-label-bold text-label-bold" href="#">System Status</a>
+</div>
+<div class="flex items-center gap-4 border-l border-surface-variant pl-8">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-recovery-berry rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 cursor-pointer group">
+<img alt="Elite Labs Admin Profile" class="w-10 h-10 rounded-full object-cover border-2 border-transparent group-hover:border-energy-lime transition-all" data-alt="A professional male executive headshot with sharp, high-contrast studio lighting. He is wearing a minimalist dark navy athletic polo, embodying a focused and authoritative laboratory administrator persona. The background is a clean, neutral gray that complements the modern Elite Labs aesthetic. The image feels high-resolution and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuvvt9fPSyBlq9xnwv3sn2TaIPOZiApCy9sl6Dai6KanZG-Hxk7BfxS8VjcpsibotmJe9RE4ZbTchZ6qs6e028OnahyORajF_zVMh9oS7RUtEBOsR92RK4Y-xW2GP8iK2sTRcLONomrcsKbMZ3sx0NKLjtLzN_-KXzXgRJ9tKbIsG0PWZ2lndMOk8BbuktcUq4Kk1Ts8pvuwXr5MN6-TLI92xfzaaXnihp10SPLYhGFZn0m2VzXl94Iv-qe686NBOuPuETqeTZMQ"/>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-margin-desktop min-h-screen">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tighter">Order Management</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">High-performance fulfillment control for all laboratory-grade supplement shipments.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 bg-primary-container text-pure-white rounded font-label-bold text-label-bold flex items-center gap-2 hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                    EXPORT CSV
+                </button>
+<button class="px-6 py-3 bg-energy-lime text-primary rounded font-label-bold text-label-bold flex items-center gap-2 hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    CREATE NEW ORDER
+                </button>
+</div>
+</div>
+<!-- Filter Bento Box -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-8">
+<div class="bg-pure-white p-6 rounded-xl shadow-[32px_32px_64px_rgba(32,42,54,0.04)] border border-surface-variant/50">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Total Orders</p>
+<p class="font-headline-lg text-headline-lg text-primary">1,284</p>
+<div class="flex items-center gap-2 mt-4 text-focus-zest">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-bold text-label-bold">+12% vs Last Month</span>
+</div>
+</div>
+<div class="bg-pure-white p-6 rounded-xl shadow-[32px_32px_64px_rgba(32,42,54,0.04)] border border-surface-variant/50">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Pending Fulfillment</p>
+<p class="font-headline-lg text-headline-lg text-recovery-berry">42</p>
+<div class="mt-4 h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-recovery-berry w-[42%]"></div>
+</div>
+</div>
+<div class="bg-pure-white p-6 rounded-xl shadow-[32px_32px_64px_rgba(32,42,54,0.04)] border border-surface-variant/50">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Avg. Processing Time</p>
+<p class="font-headline-lg text-headline-lg text-primary">0.8<span class="text-headline-md font-medium">h</span></p>
+<div class="flex items-center gap-2 mt-4 text-energy-lime bg-primary px-2 py-1 rounded inline-flex">
+<span class="material-symbols-outlined text-xs">bolt</span>
+<span class="font-label-sm text-label-sm">ELITE SPEED</span>
+</div>
+</div>
+<div class="bg-pure-white p-6 rounded-xl shadow-[32px_32px_64px_rgba(32,42,54,0.04)] border border-surface-variant/50">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Revenue (24h)</p>
+<p class="font-headline-lg text-headline-lg text-primary">$18,420</p>
+<p class="font-label-bold text-label-bold text-on-surface-variant mt-4">Top product: Whey Iso-Max</p>
+</div>
+</div>
+<!-- Data Grid Table Section -->
+<div class="bg-pure-white rounded-xl shadow-[32px_32px_64px_rgba(32,42,54,0.04)] border border-surface-variant/50 overflow-hidden">
+<!-- Table Controls -->
+<div class="px-8 py-6 border-b border-surface-variant flex flex-wrap gap-4 items-center justify-between bg-surface-bright">
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-primary text-energy-lime rounded font-label-bold text-label-bold">All Orders</button>
+<button class="px-4 py-2 hover:bg-surface-variant rounded font-label-bold text-label-bold transition-colors">Processing</button>
+<button class="px-4 py-2 hover:bg-surface-variant rounded font-label-bold text-label-bold transition-colors">Shipped</button>
+<button class="px-4 py-2 hover:bg-surface-variant rounded font-label-bold text-label-bold transition-colors">Delivered</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-bold text-label-bold text-on-surface-variant">Sort by:</span>
+<select class="bg-surface border border-outline-variant rounded-lg font-label-bold text-label-bold py-2 px-4 focus:ring-energy-lime focus:border-energy-lime">
+<option>Newest First</option>
+<option>Oldest First</option>
+<option>Highest Amount</option>
+</select>
+</div>
+</div>
+<!-- Professional Data Grid -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Order ID</th>
+<th class="px-8 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Date</th>
+<th class="px-8 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Customer</th>
+<th class="px-8 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Total Amount</th>
+<th class="px-8 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Fulfillment Status</th>
+<th class="px-8 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<!-- Row 1 -->
+<tr class="data-grid-row">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-94281</td>
+<td class="px-8 py-6 text-on-surface-variant font-body-md">Oct 24, 2023 | 14:22</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container text-energy-lime flex items-center justify-center font-bold text-xs">JS</div>
+<span class="font-label-bold text-on-surface">James Stuntman</span>
+</div>
+</td>
+<td class="px-8 py-6 font-label-bold text-primary">$214.99</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-energy-lime/20 text-primary rounded-full font-label-bold text-label-sm flex items-center gap-1.5 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-energy-lime"></span> Processing
+                                </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-surface-variant rounded transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="data-grid-row">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-94280</td>
+<td class="px-8 py-6 text-on-surface-variant font-body-md">Oct 24, 2023 | 13:05</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container text-energy-lime flex items-center justify-center font-bold text-xs">ML</div>
+<span class="font-label-bold text-on-surface">Marcus Lifts</span>
+</div>
+</td>
+<td class="px-8 py-6 font-label-bold text-primary">$89.50</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full font-label-bold text-label-sm flex items-center gap-1.5 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Shipped
+                                </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-surface-variant rounded transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="data-grid-row">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-94279</td>
+<td class="px-8 py-6 text-on-surface-variant font-body-md">Oct 24, 2023 | 11:40</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container text-energy-lime flex items-center justify-center font-bold text-xs">SK</div>
+<span class="font-label-bold text-on-surface">Sarah Kinesis</span>
+</div>
+</td>
+<td class="px-8 py-6 font-label-bold text-primary">$432.00</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-recovery-berry/10 text-recovery-berry rounded-full font-label-bold text-label-sm flex items-center gap-1.5 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-recovery-berry"></span> Urgent
+                                </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-surface-variant rounded transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="data-grid-row">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-94278</td>
+<td class="px-8 py-6 text-on-surface-variant font-body-md">Oct 23, 2023 | 23:59</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container text-energy-lime flex items-center justify-center font-bold text-xs">DW</div>
+<span class="font-label-bold text-on-surface">David Wheeler</span>
+</div>
+</td>
+<td class="px-8 py-6 font-label-bold text-primary">$156.25</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-focus-zest/10 text-focus-zest rounded-full font-label-bold text-label-sm flex items-center gap-1.5 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-focus-zest"></span> Pending
+                                </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-surface-variant rounded transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="data-grid-row">
+<td class="px-8 py-6 font-label-bold text-primary">#ORD-94277</td>
+<td class="px-8 py-6 text-on-surface-variant font-body-md">Oct 23, 2023 | 22:15</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container text-energy-lime flex items-center justify-center font-bold text-xs">EL</div>
+<span class="font-label-bold text-on-surface">Elite Gym Corp</span>
+</div>
+</td>
+<td class="px-8 py-6 font-label-bold text-primary">$1,250.00</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-energy-lime/20 text-primary rounded-full font-label-bold text-label-sm flex items-center gap-1.5 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-energy-lime"></span> Shipped
+                                </span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 hover:bg-surface-variant rounded transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-8 py-6 bg-surface-bright border-t border-surface-variant flex items-center justify-between">
+<p class="font-body-md text-on-surface-variant">Showing <span class="font-label-bold">1-10</span> of 1,284 orders</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded bg-primary text-energy-lime font-label-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- System Insights - Laboratory Theme -->
+<section class="mt-section-gap mb-margin-desktop">
+<div class="bg-primary text-pure-white p-12 rounded-2xl relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10">
+<img alt="Lab Background" class="w-full h-full object-cover grayscale" data-alt="A futuristic laboratory setting with blue and white clinical lighting, featuring clean glass apparatus and high-tech equipment. The aesthetic is ultra-modern and precise, representing the Elite Labs scientific commitment to quality. Sharp focus and deep blacks contrast with the bright scientific machinery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJ1acurcX5yb9nsXqKrWqbTfVqPIgA8gwlkCKHfGJ39zVhTcjpS6Af5hgh6PMyOm7FWtHOKCfKuW44Ay4KmMgW-V_pqYfh9HcLKkJHiEVKhDtZBsC-Iny7dBJYdg71EOrUVeoZQhTwZnLADV_JAtkCsDpVzuRY3fXP9_Gm0Mny79X9OEDRIDW9xotBVsKGdd2by-g7cVQPhoJ3XuztOrCI2-zKqDj8L1E1WqQAddms6lDWg6JhOQnT8d32sq5XttcpwYS-UXxLg"/>
+</div>
+<div class="relative z-10">
+<span class="px-3 py-1 bg-energy-lime text-primary font-label-bold text-label-sm rounded uppercase mb-6 inline-block">System Intelligence</span>
+<h3 class="font-headline-lg text-headline-lg mb-4 tracking-tighter">PREDICTIVE LOGISTICS ANALYTICS</h3>
+<p class="text-surface-variant max-w-xl font-body-lg">Based on current laboratory throughput and courier availability, estimated fulfillment for all pending "Elite Speed" orders is within the next 45 minutes.</p>
+<div class="mt-8 flex gap-8">
+<div>
+<p class="font-label-bold text-energy-lime uppercase tracking-widest text-sm">Throughput</p>
+<p class="font-headline-md text-headline-md">98.2%</p>
+</div>
+<div>
+<p class="font-label-bold text-energy-lime uppercase tracking-widest text-sm">Courier Sync</p>
+<p class="font-headline-md text-headline-md">Active</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+        // Micro-interaction for table rows
+        document.querySelectorAll('.data-grid-row').forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.add('bg-energy-lime/5');
+                setTimeout(() => row.classList.remove('bg-energy-lime/5'), 300);
+            });
+        });
+
+        // Simple search feedback
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            if (e.target.value.length > 2) {
+                searchInput.classList.add('border-energy-lime');
+            } else {
+                searchInput.classList.remove('border-energy-lime');
+            }
+        });
+    </script>
+</body></html>

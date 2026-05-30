@@ -27,6 +27,8 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
 Route::get('/checkout/failure', [CheckoutController::class, 'failure'])->name('checkout.failure');
 Route::get('/checkout/pending', [CheckoutController::class, 'pending'])->name('checkout.pending');
+Route::get('/checkout/paypal/return', [CheckoutController::class, 'paypalReturn'])->name('checkout.paypal.return');
+Route::get('/checkout/paypal/cancel', [CheckoutController::class, 'paypalCancel'])->name('checkout.paypal.cancel');
 
 Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');
 Route::post('/webhooks/mercadopago', MercadoPagoWebhookController::class)->name('webhooks.mercadopago');
@@ -39,5 +41,5 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('products/bulk', [ProductController::class, 'bulk'])->name('products.bulk');
     Route::resource('products', ProductController::class)->except(['show']);
-    Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::resource('orders', OrderController::class)->only(['index', 'show', 'update']);
 });

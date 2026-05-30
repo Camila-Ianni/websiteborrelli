@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Product;
 use App\Services\MercadoPagoService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +33,11 @@ class MercadoPagoWebhookController extends Controller
         }
 
         DB::transaction(function () use ($order, $paymentId, $payment) {
+            $order = Order::query()
+                ->with('items')
+                ->lockForUpdate()
+                ->findOrFail($order->id);
+
             $status = $payment['status'] ?? 'pending';
 
             if ($status === 'approved') {
@@ -42,10 +50,7 @@ class MercadoPagoWebhookController extends Controller
 
             if (in_array($status, ['cancelled', 'rejected', 'expired'], true)) {
                 if ($order->status !== 'cancelled') {
-                    $order->loadMissing('items.product');
-                    foreach ($order->items as $item) {
-                        $item->product?->incrementStock($item->quantity);
-                    }
+                    $this->restoreOrderStock($order);
                 }
 
                 $order->update([
@@ -62,5 +67,18 @@ class MercadoPagoWebhookController extends Controller
         });
 
         return response()->json(['status' => 'ok']);
+    }
+
+    private function restoreOrderStock(Order $order): void
+    {
+        $products = Product::withTrashed()
+            ->whereIn('id', $order->items->pluck('product_id')->filter()->unique())
+            ->lockForUpdate()
+            ->get()
+            ->keyBy('id');
+
+        foreach ($order->items as $item) {
+            $products->get($item->product_id)?->incrementStock($item->quantity);
+        }
     }
 }

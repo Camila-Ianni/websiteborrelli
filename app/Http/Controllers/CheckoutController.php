@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Order;
@@ -11,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use RuntimeException;
 
 class CheckoutController extends Controller
 {
@@ -119,7 +122,16 @@ class CheckoutController extends Controller
         }
 
         if ($data['payment_method'] === 'paypal') {
-            $paypalOrder = $payPal->createOrder($order);
+            $paypalOrder = $payPal->createOrder(
+                $order,
+                route('checkout.paypal.return'),
+                route('checkout.paypal.cancel')
+            );
+
+            $order->update([
+                'payment_gateway_id' => $paypalOrder['id'] ?? null,
+            ]);
+
             if (! empty($paypalOrder['approval_url'])) {
                 return redirect()->away($paypalOrder['approval_url']);
             }
@@ -133,6 +145,84 @@ class CheckoutController extends Controller
         return view('checkout.transfer', [
             'order' => $order,
         ]);
+    }
+
+    public function paypalReturn(Request $request, PayPalService $payPal)
+    {
+        $paypalOrderId = $request->query('token');
+
+        if (! is_string($paypalOrderId) || $paypalOrderId === '') {
+            return redirect()->route('checkout.failure');
+        }
+
+        $currentStatus = Order::query()
+            ->where('payment_method', 'paypal')
+            ->where('payment_gateway_id', $paypalOrderId)
+            ->value('status');
+
+        if (! $currentStatus) {
+            return redirect()->route('checkout.failure');
+        }
+
+        if ($currentStatus === 'paid') {
+            return redirect()->route('checkout.success');
+        }
+
+        if ($currentStatus === 'cancelled') {
+            return redirect()->route('checkout.failure');
+        }
+
+        try {
+            $capture = $payPal->captureOrder($paypalOrderId);
+        } catch (RuntimeException) {
+            return redirect()->route('checkout.failure');
+        }
+
+        $paypalStatus = $capture['status'] ?? null;
+
+        DB::transaction(function () use ($paypalOrderId, $paypalStatus) {
+            $order = Order::query()
+                ->where('payment_method', 'paypal')
+                ->where('payment_gateway_id', $paypalOrderId)
+                ->lockForUpdate()
+                ->first();
+
+            if (! $order) {
+                return;
+            }
+
+            if ($paypalStatus === 'COMPLETED') {
+                $order->update(['status' => 'paid']);
+            }
+        });
+
+        return $paypalStatus === 'COMPLETED'
+            ? redirect()->route('checkout.success')
+            : redirect()->route('checkout.pending');
+    }
+
+    public function paypalCancel(Request $request)
+    {
+        $paypalOrderId = $request->query('token');
+
+        if (is_string($paypalOrderId) && $paypalOrderId !== '') {
+            DB::transaction(function () use ($paypalOrderId) {
+                $order = Order::query()
+                    ->where('payment_method', 'paypal')
+                    ->where('payment_gateway_id', $paypalOrderId)
+                    ->lockForUpdate()
+                    ->first();
+
+                if (! $order || $order->status === 'cancelled') {
+                    return;
+                }
+
+                $this->restoreOrderStock($order);
+                $order->update(['status' => 'cancelled']);
+            });
+        }
+
+        return redirect()->route('checkout.failure');
     }
 
     public function success()
@@ -160,5 +250,19 @@ class CheckoutController extends Controller
             'total' => $subtotal,
             'count' => collect($items)->sum('quantity'),
         ];
+    }
+
+    private function restoreOrderStock(Order $order): void
+    {
+        $order->loadMissing('items');
+        $products = Product::withTrashed()
+            ->whereIn('id', $order->items->pluck('product_id')->filter()->unique())
+            ->lockForUpdate()
+            ->get()
+            ->keyBy('id');
+
+        foreach ($order->items as $item) {
+            $products->get($item->product_id)?->incrementStock($item->quantity);
+        }
     }
 }

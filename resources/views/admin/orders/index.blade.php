@@ -14,6 +14,7 @@
                         <th class="py-3 pr-4">{{ __('messages.payment_method') }}</th>
                         <th class="py-3 pr-4">{{ __('messages.status') }}</th>
                         <th class="py-3 pr-4">{{ __('messages.total') }}</th>
+                        <th class="py-3 pr-4">{{ __('messages.actions') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,11 @@
                             <td class="py-3 pr-4">{{ ucfirst($order->payment_method) }}</td>
                             <td class="py-3 pr-4">{{ ucfirst($order->status) }}</td>
                             <td class="py-3 pr-4">${{ number_format($order->total, 2, ',', '.') }}</td>
+                            <td class="py-3 pr-4">
+                                <a class="text-primary font-semibold" href="{{ route('admin.orders.show', $order) }}">
+                                    {{ __('messages.view') }}
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
